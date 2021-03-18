@@ -1,1 +1,1 @@
-# SE-Homework
+HTML and CSS Per Scholas pre work assignment.

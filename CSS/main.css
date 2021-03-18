@@ -1,0 +1,150 @@
+/*
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*/
+
+body {
+    background-color: antiquewhite;
+    padding: 0;
+    margin-top: 50px;
+    margin-left: 0;
+    text-align: center;
+}
+
+.div__Nav {
+    position: fixed;
+    width: 100%;
+    background-color: #333;
+    top: 0;
+    overflow: hidden;
+}
+
+.div__Nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+h1, h3 {
+    color:darkgreen;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+.div__Paragraph {
+    color: darkmagenta;
+    font-size: large;
+    font-family: monospace;
+    position: relative;
+    text-align: center;
+    border: solid 1px black;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .div__Paragraph .about1 {
+      display: inline;
+  }
+
+  .div__Paragraph .about2 {
+    display: inline;
+    color: red;
+}
+
+#lorem {
+    padding-left: 15px;
+}
+
+#lorem:hover {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:darkred;
+   
+}
+
+.lorem2:hover{
+    font-family: fantasy;
+    color: darkslateblue;
+    font-size: x-large;
+    background-color: black;
+}
+
+.div__Image a img{
+    display: inline-flex;
+    max-width: 100%;
+}
+
+.div__Video iframe {
+    max-width: 100%;
+}
+
+#div__List ul {
+    font-size: large;
+    padding-left: 0;
+}
+
+#div__List ul li {
+    list-style-position: inside;
+}
+
+a {
+    color:crimson;
+}
+
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+th, td {
+    padding: 10px;
+  }
+
+th {
+    text-align: center;
+}
+
+.table__Image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 400px;
+    max-width: 100%;
+    
+}
+
+#sugestions{
+    margin-top: 5px;
+}
+
+#div__Form {
+    border: black 3px dotted;
+    margin-top: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+
+#div__Form button {
+    font-family: 'Oswald';
+    background-color: #bbb;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    padding: 5px;
+}
+
+#div__Form button:hover {
+    border: none;
+    background: orange;
+}
