@@ -39,13 +39,16 @@ h2 {
     text-decoration: underline;
 }
 
+p {
+    font-family: 'Times New Roman', Times, serif;
+}
+
 .div__Paragraph {
     color: darkmagenta;
     font-size: large;
     font-family: monospace;
     position: relative;
     text-align: center;
-    border: solid 1px black;
     max-width: 100%;
     padding: 15px;
   }
@@ -65,8 +68,9 @@ h2 {
 
 #lorem:hover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color:darkred;
-   
+    color:black;
+    text-transform: capitalize;
+    text-align: right;
 }
 
 .lorem2:hover{
@@ -112,13 +116,29 @@ th {
     text-align: center;
 }
 
+td a {
+    display: block;
+    padding-bottom: 15px;
+}
+
+td p {
+    justify-content: left;
+    display: block;
+    font-size: large;
+    text-align: left;
+    
+}
+
 .table__Image {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
-    height: 400px;
+    width: 50%;
+    height: auto;
     max-width: 100%;
+    float: right;
+    padding-left: 10px;
+    padding-top: 10px;
     
 }
 
