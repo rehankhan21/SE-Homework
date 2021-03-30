@@ -1,17 +1,17 @@
-var num = "21";
+var grade = 80;
 
-if(num > 0){
-    if(num <= 100) {
-        console.log(num + " less than 100");
+if(grade > 60){
+    if(grade >= 90 && grade <= 100) {
+        console.log(" you are a top student");
     }
     else{
-        console.log(num + " is greater than 100");
+        console.log(" almost there keeping going!!!");
     }
 }
-else if (num < 0){
+else if (grade >= 0 && grade < 60){
 
-        console.log(num + " is negative");
+        console.log(" you have to try harder");
 }
 else {
-    console.log(num + " is zero");
+    console.log("not valid grade");
 }

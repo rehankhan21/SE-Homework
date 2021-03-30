@@ -16,3 +16,5 @@ else if (num >= 0 && num <= 9) {
 else {
     console.log(letter + " is a consonant");
 }
+
+console.log('5' == 5);
