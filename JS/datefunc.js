@@ -6,12 +6,10 @@ var sec = date.getSeconds();
 
 if(hour < 12) {
     console.log("Good Morning");
-    console.log(hour + ":" + min + ":" + sec);
 }
-else if (hour >= 12 && hour <= 16) {
+else if (hour >= 12 && hour <= 16 && min == 0 ) {
     console.log("Good Afternoon");
 }
 else {
     console.log("Hello, how are you?");
-   
 }
