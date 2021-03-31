@@ -4,7 +4,7 @@ var day = 7;
 var dayName = "";
 
 if(month == 1){
-    monthName = "janurary"
+    monthName = "januray"
 }
 else if(month == 2){
     monthName = "Feburary"
@@ -13,7 +13,7 @@ else if(month == 3){
     monthName = "March"
 }
 else if(month == 4){
-    monthName = "April"
+    monthName = "Apri"
 }
 else if(month == 5){
     monthName = "May"
