@@ -6,4 +6,4 @@ for(let counter = 1; counter <= 20; counter++) {
     total += counter;
 }
 
-console.log(total);
+console.log("total = "total);
