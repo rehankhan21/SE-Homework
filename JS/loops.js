@@ -1,9 +1,9 @@
-let total = 0;
+let start = 30;
+let end = 5;
 
-for(let counter = 1; counter <= 20; counter++) {
+for(let counter = start; counter >= end; counter--) {
 
-    //console.log(counter * 2 + ". Hello!! How are you today");
-    total += counter;
+    if((counter % 2) == 0){
+        console.log(counter + " is an even number");
+    }
 }
-
-console.log("total = "total);
