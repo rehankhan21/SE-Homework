@@ -1,6 +1,9 @@
-for(let counter = 10; counter >= 1; counter--) {
+let total = 0;
 
-    console.log(counter + ". Hello!! How are you today");
+for(let counter = 1; counter <= 20; counter++) {
+
+    //console.log(counter * 2 + ". Hello!! How are you today");
+    total += counter;
 }
 
-console.log("Outside of for loop now")
+console.log(total);
