@@ -1,4 +1,4 @@
-for(let counter = 1; counter <= 10; counter++) {
+for(let counter = 10; counter >= 1; counter--) {
 
     console.log(counter + ". Hello!! How are you today");
 }
