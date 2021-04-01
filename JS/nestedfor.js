@@ -1,11 +1,14 @@
-let value = "*";
-for (let row = 1; row <= 5; row++) {
+//let value = "*";
+let userRow = 7;
+let userCol = 8;
 
-    for(let column = 1; column <= 3; column++) {
+for (let row = 1; row <= userRow; row++) {
+
+    for(let column = 1; column <= userCol; column++) {
         //console.log(value++);
         //process.stdout.write(value.toString() + " ");
         //value++;
-        process.stdout.write(value + " ");
+        process.stdout.write(row + " ");
     }
 
     console.log();
