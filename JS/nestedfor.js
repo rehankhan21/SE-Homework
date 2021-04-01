@@ -8,7 +8,7 @@ for (let row = 1; row <= userRow; row++) {
         //console.log(value++);
         //process.stdout.write(value.toString() + " ");
         //value++;
-        process.stdout.write(row + " ");
+        process.stdout.write(row + "," + column + " ");
     }
 
     console.log();
