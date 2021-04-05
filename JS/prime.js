@@ -1,12 +1,9 @@
-let num = 1;
+let num = 15;
 let flag = true;
 
-for(let counter = 1; counter <= num; counter++){
+for(let counter = 2; counter < num; counter++){
     
-         if (num / counter == num || num / counter == 1){
-            flag = true;
-        }
-        else if(num % counter == 0 && counter != num){
+         if(num % counter == 0){
             flag = false;
             break;
         }
