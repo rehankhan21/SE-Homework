@@ -15,6 +15,6 @@ for (let range = 1; range <= num; range++) {
     }
 
     if (flag == true) {
-        console.log(range + ", ")
+        process.stdout.write(range + ", ")
     }
 }
