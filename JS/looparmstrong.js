@@ -2,21 +2,6 @@ let armnum = 153;
 let armtest = armnum;
 let singlenum = 0;
 let total = 0;
-let q = 0;
-let r = 0;
-
-// for (let i = 1; i <= 3; i++) {
-
-//     singlenum = armtest % 10;
-//     armtest = Math.trunc(armtest / 10);
-
-//     total += Math.pow(singlenum, 3);
-
-//     q = num / 10;
-//     r = 
-
-
-// }
 
 while(armtest != 0){
 
