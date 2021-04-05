@@ -1,7 +1,7 @@
-let num = 15;
+let num = 30;
 let flag = true;
 
-for(let range = 2; range <= num; range++){
+for(let range = 1; range <= num; range++){
     
     for(let counter = 1; counter <= range; counter++){
 
