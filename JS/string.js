@@ -6,6 +6,8 @@ let fname = "John ";
 let lname = "Smith S";
 let fullname = fname.concat(lname);
 
+let stringnum = "34521";
+
 console.log(fname.concat(lname));
 
 console.log(fname.toUpperCase(), lname.toLowerCase());
@@ -21,3 +23,5 @@ for(let i = 0; i < fullname.length; i++) {
 }
 
 console.log(fullname.indexOf("t"));
+
+console.log(fullname.slice(0,3))
