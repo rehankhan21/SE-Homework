@@ -12,4 +12,4 @@ for (let i = 0; i < string.length; i++) {
     }
 }
 
-console.log(numOfVowels);
+console.log(numOfVowels + " is the number of vowels in the string");
