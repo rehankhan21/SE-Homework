@@ -1,4 +1,4 @@
-let armnum = 153;
+let armnum = 123;
 let armtest = armnum;
 let singlenum = 0;
 let total = 0;
