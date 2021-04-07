@@ -3,6 +3,16 @@ let inputPassword = "1password "
 let trimName = inputName.trim().toLowerCase();
 let trimPassword = inputPassword.trim().toLowerCase();
 
+/*  
+    Register the user if they do have a log in 
+    encrypt the password atfer being registered.
+    loop the replace string function on the password to encrpyt
+
+
+    uncrpyt when they try to log in ??? maybe
+
+*/
+
 
 if (trimName == "user" && trimPassword == "password") {
     console.log("you are loggined in")
@@ -11,8 +21,11 @@ if (trimName == "user" && trimPassword == "password") {
         prompt works in webpage
 
         verify email address. then input verification code.
-    
+
         loop a list of items, add buttons thats add items too cart. 
+        put the list of items in an array then loop through the array.
+        to print all the items.
+
         if(Cart is not empty){
             go to cart for checkout
         }
