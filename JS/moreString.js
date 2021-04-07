@@ -21,6 +21,7 @@ console.log(strPadStart.padStart(40, " "))
 console.log(strPadEnd.padEnd(40, 1))
 
 console.log(newline);
+
 console.log('\n');
 
 let strConcat = strPadStart
@@ -31,3 +32,6 @@ let strConcat = strPadStart
     .toUpperCase()
 
 console.log(strConcat);
+console.log(strConcat.includes("Coffee"));
+console.log(strConcat.startsWith("COFFEE"))
+console.log(strConcat.endsWith("END"))
