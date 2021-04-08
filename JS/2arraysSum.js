@@ -11,3 +11,12 @@ for (let i = 0; i < 5; i++) {
     array3.push(sum);
     console.log(array3[i]);
 }
+
+console.log(array3.sort());
+
+console.log(array3.reverse());
+
+console.log(array3.pop());
+
+console.log(array3.length);
+console.log(array3);
