@@ -1,6 +1,7 @@
 let array = [];
 let sum = 0;
-array
+
+let numS = "123"
 
 for (let i = 1; i <= 10; i++) {
 
@@ -13,4 +14,5 @@ for (let i = 0; i < array.length; i++) {
     sum += array[i];
 }
 
+console.log(numS[1])
 console.log("Sum of array elements = " + sum);
