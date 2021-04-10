@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="clock.css">
+    <script src="clockTimer.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="grid_container">
+
+        <div id="circle" class="circle" onclick="changeColor()" >
+            <div id="controls">
+                <input id="txtTempo" type="text" value="10" size="4" maxlength="4">
+                <button id="btnStart">Start</button>
+            </div>
+            <div id="changeColor" class="editable-in-place clock blue">
+                <div id="clock" class="blue">00:00</div>
+                 <input id="mins" class="hidden_input hide" value="00" size="15" max="19"> 
+                 <!-- <div id="clock_min" class="blue">00:00</div> -->
+                 <span>:</span>
+                 <input id="secs" class="hidden_input hide" value="00" size="15" max="19">
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
