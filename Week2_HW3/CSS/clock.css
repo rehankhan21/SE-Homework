@@ -66,6 +66,10 @@
 
 }
 
+.timer {
+    margin: auto;
+}
+
 #txtTempo {
 
     width: 60px;
