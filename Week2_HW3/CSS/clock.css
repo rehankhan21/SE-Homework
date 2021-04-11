@@ -32,6 +32,7 @@
 .blue {
     background-color: #0781d4;
     border-radius: 50%;
+    width: 100px;
 }
 
 .red {
@@ -84,7 +85,6 @@
     text-align: center;
     background-color: #0781d4;
     width: 50px;
-    text-align: center;
     padding: 3px;
     
 }
