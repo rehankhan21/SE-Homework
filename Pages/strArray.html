@@ -16,17 +16,18 @@
     <p id="para4"></p>
     <p id="para5"></p>
     <p id="para7"></p>
+    <p id="para8"></p>
     
 
     <script>
-        document.getElementById("para6").innerHTML = strArray2;
-        document.getElementById("para1").innerHTML = strArray;
-        document.getElementById("para2").innerHTML = arrayStr[0];
-        document.getElementById("para3").innerHTML = arrayStr2[0];
-        document.getElementById("para4").innerHTML = arrayStr3;
+        document.getElementById("para6").innerHTML = strArray2; // array.join("--");
+        document.getElementById("para1").innerHTML = strArray; // array.join()
+        document.getElementById("para2").innerHTML = arrayStr[0]; // takes the string upto the delimiter into a single element
+        document.getElementById("para3").innerHTML = arrayStr2[0]; // takes the whole string into a single element
+        document.getElementById("para4").innerHTML = arrayStr3; // parses each char of the string into an element
         document.getElementById("para5").innerHTML = arrayStr.sort();
         document.getElementById("para7").innerHTML = arrayStr.sort().reverse();
-
+        document.getElementById("para8").innerHTML = arrayStr4; // array.toString
     </script>
 </body>
 </html>

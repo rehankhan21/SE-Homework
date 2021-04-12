@@ -19,8 +19,10 @@ let strArray2 = array.join();
 
 let string = "bob john hop"
 
+
 let arrayStr = string.split(" ")
 let arrayStr2 = string.split()
+let arrayStr4 = array.toString();
 
 // this parses each strings character as a seperate element
 let arrayStr3 = string.split("") 
