@@ -12,9 +12,10 @@
     //array.toString()
 */
 
-let array = ["mon", "tues", "wed"];
+let array = ["mon", "tues", "wed", "thurs", "friday"];
 
 let strArray = array.join("--")
+let strArray2 = array.join();
 
 let string = "bob john hop"
 
@@ -24,7 +25,7 @@ let arrayStr2 = string.split()
 // this parses each strings character as a seperate element
 let arrayStr3 = string.split("") 
 
-//  document.getElementById("para1").innerHTML = strArray;
+// document.getElementById("para1").innerHTML = strArray;
 
 // document.getElementById("para2").innerHTML = array;
 
