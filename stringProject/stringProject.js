@@ -8,10 +8,39 @@ let trimPassword = inputPassword.trim().toLowerCase();
     encrypt the password atfer being registered.
     loop the replace string function on the password to encrpyt
 
-
     uncrpyt when they try to log in ??? maybe
 
 */
+let randomSymbols = ['e', 'n', 'c', 'r', 'y', 'p', 't']
+
+let encrypt = e => {
+    // e.preventDefault();
+    // alert("form works")
+    
+    // let value = document.getElementById("register").value;
+    // console.log(value);
+
+    let value = window.prompt("Enter Password");
+
+    for(let i = 0; i < value.length; i++) {
+        
+        let temp = randomSymbols[Math.floor(Math.random(7))]
+
+        console.log(Math.random(4))
+
+        let testValue = "";
+        testValue += temp;
+
+        console.log(temp + " temp");
+
+        let newPass = "";
+        newPass +=  value.replace(value[i], temp);
+
+        console.log(typeof(value) + " value")
+        console.log(newPass + " replacePass");
+        console.log(testValue)
+    }
+}
 
 
 if (trimName == "user" && trimPassword == "password") {
