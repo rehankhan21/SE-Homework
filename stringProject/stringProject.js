@@ -11,7 +11,6 @@ let trimPassword = inputPassword.trim().toLowerCase();
     uncrpyt when they try to log in ??? maybe
 
 */
-let randomSymbols = ['e', 'n', 'c', 'r', 'y', 'p', 't']
 
 let encrypt = e => {
     // e.preventDefault();
@@ -22,23 +21,21 @@ let encrypt = e => {
 
     let value = window.prompt("Enter Password");
 
+    let randomSymbols = ['!', '@', '#', '$']
+    let newPass = "";
+    let testValue = "";
+
     for(let i = 0; i < value.length; i++) {
         
-        let temp = randomSymbols[Math.floor(Math.random(7))]
+        let temp = randomSymbols[Math.floor(Math.random(4) * randomSymbols.length)]
 
-        console.log(Math.random(4))
-
-        let testValue = "";
         testValue += temp;
 
-        console.log(temp + " temp");
-
-        let newPass = "";
         newPass +=  value.replace(value[i], temp);
 
-        console.log(typeof(value) + " value")
+        console.log(value[i] + " value")
         console.log(newPass + " replacePass");
-        console.log(testValue)
+        console.log(testValue + " testValue")
     }
 }
 
