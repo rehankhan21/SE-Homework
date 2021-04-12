@@ -25,14 +25,12 @@ function documentLoaded() {
     create a timer to execute the "updateTime" function once a second.
 
 */
-
 function buttonClicked() {
     "use strict";
 
     startTime = new Date();
 
     limit = parseInt(document.getElementById("txtTempo").value);
-    console.log(limit);
 
     clearInterval(temp);
     temp = setInterval(updateTime, 1000);
@@ -61,117 +59,119 @@ function updateTime() {
 
     //show the elapsed time
     document.getElementById("clock").innerHTML = minutes + ":" + seconds;
+    var red = document.getElementById("changeColor").classList.contains("red");
 
     // check if we are above the time limit and set the color of the timer accordingly
-    if (minutes >= limitmin && seconds >= limitsec ) {
+    // if changed to color red, then remain red
+    if (minutes >= limitmin && seconds >= limitsec) {
 
         document.getElementById("clock").className = "red";
-        document.getElementById("changeColor").classList.remove("blue")
-        document.getElementById("changeColor").classList.add("red")
+        document.getElementById("changeColor").classList.remove("blue");
+        document.getElementById("changeColor").classList.add("red");
+    }
+    else if (red == true) {
+
+        document.getElementById("clock").className = "red";
+        document.getElementById("changeColor").classList.remove("blue");
+        document.getElementById("changeColor").classList.add("red");
     }
     else {
 
         document.getElementById("clock").className = "blue";
-        document.getElementById("changeColor").classList.remove("red")
-        document.getElementById("changeColor").classList.add("blue")
+        document.getElementById("changeColor").classList.remove("red");
+        document.getElementById("changeColor").classList.add("blue");
     }
 
 }
 
 function clicked(evt) {
-    // get the <input> and check if it is hidden
+
+    /* get the children of editable class and make an array of its children elements
+        for all input tags and div tags, then take the first span tag and put it in a variable.
+    */
     var input = this.querySelectorAll("input");
     var label = this.querySelectorAll("div");
-    // var inputmin = document.getElementById("mins");
-    // var labelmin = this.querySelector("div");
+    var span = this.querySelector("span");
 
-    // var inputsec = document.getElementById("secs");
-    // var labelsec = this.querySelector("div");
+
+    // Clears the ongoing timer if there is one.
     clearInterval(temp);
-    console.log(input);
-    console.log(label);
-
 
     if (evt.target === input[0] || evt.target === input[1]) {
         // if user clicked on <input> do nothing, he is editing
 
-    } else if (evt.target === label[0] || evt.target === label[1] ) {
-        // <input> was hidden, make it visible
-        // input.forEach(element => {
-        //     element.classList.remove("hide");
-        // });
+    } else if (evt.target === label[0] || evt.target === label[1]) {
 
+        //Removes the hide class for all inputs and adds the hide class to all divs
         for (let i = 0; i < input.length; i++) {
             var test = input[i];
             test.classList.remove("hide");
-            console.log(test);
         }
+
+        //Removes the hide class from span
+        span.classList.remove("hide")
 
         for (let i = 0; i < label.length; i++) {
             var testL = label[i];
             testL.classList.add("hide");
         }
 
-
-
         //input.classList.remove("hide");
-        // input.className("sec").classList.remove("hide");
 
         //  and hide the label
         //label.classList.add("hide");
-        // label.className("clock").classList.add("hide");
 
         // fill the <input> with the text from the label
         //input.value = label.innerHTML;
 
         // listens for the "ENTER" to be pressed
-
         input[0].addEventListener("keydown", function keydown(evt) {
 
             // 13 is the code for ENTER
             if (evt.keyCode === 13) {
                 //label.innerHTML = input.value;
-               // input.className("sec").focus();
 
+                //Sets the new values for the update function 
                 startTime = new Date();
-                var min = parseInt(input[0].value)
+                var min = parseInt(input[0].value);
                 limitmin = min;
-                //clearInterval(temp);
-                //temp = setInterval(updateTime, 1000);
-
-                // label.classList.remove("hide");
-                // input.classList.add("hide");
 
 
                 // its important to remove the keydown listener, otherwise in a subsequent edit
                 // we will end up with several keydown listeners running
                 input[0].removeEventListener("keydown", keydown);
+
+                // Shifts the focus on enter click from the first input too the second
                 input[1].focus();
             }
 
         });
 
+
+        // A second event listener for the second input field
         input[1].addEventListener("keydown", function keydown(evt) {
 
             // 13 is the code for ENTER
             if (evt.keyCode === 13) {
-                //label.innerHTML = input.value;
-               // input.className("sec").focus();
 
                 startTime = new Date();
-                var sec = parseInt(input[1].value)
-                console.log(sec);
+                var sec = parseInt(input[1].value);
                 limitsec = sec;
                 clearInterval(temp);
                 temp = setInterval(updateTime, 1000);
 
                 //label.classList.remove("hide");
-                for(let i = 0; i < label.length; i++) {
+
+                // After seting the new values from both inputs we then hide the input fields
+                for (let i = 0; i < label.length; i++) {
                     label[i].classList.remove("hide");
+                }
+
+                for (let i = 0; i < input.length; i++) {
                     input[i].classList.add("hide");
                 }
 
-                //input.classList.add("hide");
+                span.classList.add("hide");
 
 
                 // its important to remove the keydown listener, otherwise in a subsequent edit
@@ -180,8 +180,8 @@ function clicked(evt) {
             }
 
         });
-        //input.focus();
 
+        // This else is for when they click off input field without editing anything
     } else {
         // <input> was visible, hide it without modifying the value
         //input.classList.add("hide");
@@ -191,14 +191,16 @@ function clicked(evt) {
             test.classList.add("hide");
         }
 
+        span.classList.add("hide");
+
 
         // show the label
         //label.classList.remove("hide");
 
-        for(let i = 0; i < label.length; i++) {
+        for (let i = 0; i < label.length; i++) {
             var testL = label[i];
             testL.classList.remove("hide");
-        } 
+        }
     }
 
 }
