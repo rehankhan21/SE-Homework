@@ -65,6 +65,8 @@ function updateTime() {
     // if changed to color red, then remain red
     if (minutes >= limitmin && seconds >= limitsec) {
 
+        document.getElementById("mins").style.backgroundColor = "red";
+        document.getElementById("secs").style.backgroundColor = "red";
         document.getElementById("clock").className = "red";
         document.getElementById("changeColor").classList.remove("blue");
         document.getElementById("changeColor").classList.add("red");
@@ -92,7 +94,6 @@ function clicked(evt) {
     var input = this.querySelectorAll("input");
     var label = this.querySelectorAll("div");
     var span = this.querySelector("span");
-
 
     // Clears the ongoing timer if there is one.
     clearInterval(temp);
