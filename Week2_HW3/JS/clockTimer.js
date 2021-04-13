@@ -101,6 +101,7 @@ function updateInputTime(min, sec) {
     var minutes = Math.floor(elasped / 60);
     var seconds = Math.floor(elasped % 60);
 
+
     // pad with zeroes on the left to look better
     if (minutes < 10) {
         minutes = "0" + minutes;

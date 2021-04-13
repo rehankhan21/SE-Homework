@@ -9,10 +9,12 @@
 <body>
 
     <div id="linear"></div>
+    <div id="linearMulti"></div>
 
     <script>
-        let num = [1,2,7,8,9]
-        document.getElementById("linear").innerHTML = linearSearch(num)
+        let num = [1,2,7,8,9,7];
+        document.getElementById("linear").innerHTML = linearSearch(num);
+        document.getElementById("linearMulti").innerHTML = linearSearchMulti(num);
     </script>
     
 </body>
