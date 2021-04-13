@@ -1,6 +1,7 @@
 <html lang="en">
 <head>
     <script src="../JS/function.js"></script>
+    <script src="../JS/functionsHw.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,15 @@
     <div id="message"></div>
     <div id="button1">hi</div>
     <button onclick="document.getElementById(`button1`).innerHTML = findProduct(20, 10)">click me</button>
+    <div id="even"></div>
+    <div id="totalParam"></div>
+    <div id="reverseStr"></div>
+    <div id="maxOfTwoNums"></div>
+    <div id="maxOfThree"></div>
+    <div id="sumArray"></div>
+    <div id="multiplyArray"></div>
+    <div id="longestWord"></div>
+    <div id="filterWords"></div>
 
     <script>
 
@@ -24,6 +34,29 @@
 
         let sumparam = findProduct(3, 3);
         document.getElementById("sumparam").innerHTML = "the sum of your numbers is " + sumparam;
+
+        let num = 4;
+        document.getElementById("even").innerHTML = num + " is " + findEven(4);
+
+        let totalp = totalParam("hello",2,3)
+
+        document.getElementById("totalParam").innerHTML = totalp;
+
+        document.getElementById("reverseStr").innerHTML = reverseString("hello");
+
+        document.getElementById("maxOfTwoNums").innerHTML = maxOfTwoNumbers(2, 5);
+
+        document.getElementById("maxOfThree").innerHTML = maxOfThree(4,6,3);
+
+        let numArray = [1,2,3,4];
+        document.getElementById("sumArray").innerHTML = sumArray(numArray) + " sum array";
+
+        document.getElementById("multiplyArray").innerHTML = multiplyArray(numArray) + " multiply array";
+
+        let arr = ["hello", "blahblahbalju", "wow"]
+        document.getElementById("longestWord").innerHTML = findLongestWord(arr);
+
+        document.getElementById("filterWords").innerHTML = filterWords(arr, 4);
     </script>
     
 </body>
