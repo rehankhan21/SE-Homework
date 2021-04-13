@@ -23,7 +23,12 @@
         textContent1.textContent = "text content"
 
         let divArray = document.getElementsByClassName("div");
-        divArray[2].textContent = "this is the third div"
+        // divArray[2].textContent = "this is the third div"
+
+        for (let i = 0; i < divArray.length; i++) {
+
+            divArray[i].textContent = "this is div number " +  i;
+        }
 
     </script>
     
