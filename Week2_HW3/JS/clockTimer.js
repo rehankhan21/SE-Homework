@@ -88,6 +88,58 @@ function updateTime() {
 
 }
 
+function updateInputTime(min, sec) {
+    "use strict";
+
+    //read the current time
+    var currentTime = new Date();
+
+    // calculate how many seconds passed since the start of the timer
+    var elasped = (currentTime.getTime() - startTime.getTime()) / 1000;
+
+    // convert seconds to minutes and seconds (below 60)
+    var minutes = Math.floor(elasped / 60);
+    var seconds = Math.floor(elasped % 60);
+
+    // pad with zeroes on the left to look better
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    //show the elapsed time
+    document.getElementById("clock").innerHTML = minutes + ":" + seconds;
+    var red = document.getElementById("changeColor").classList.contains("red");
+
+    // check if we are above the time limit and set the color of the timer accordingly
+    // if changed to color red, then remain red
+    if (minutes >= limitmin && seconds >= limitsec) {
+
+        document.getElementById("mins").style.backgroundColor = "red";
+        document.getElementById("secs").style.backgroundColor = "red";
+        document.getElementById("clock").className = "red";
+        document.getElementById("changeColor").classList.remove("blue");
+        document.getElementById("changeColor").classList.add("red");
+    }
+    else if (Number.isNaN(limitmin) && seconds >= limitsec) {
+
+        document.getElementById("mins").style.backgroundColor = "red";
+        document.getElementById("secs").style.backgroundColor = "red";
+        document.getElementById("clock").className = "red";
+        document.getElementById("changeColor").classList.remove("blue");
+        document.getElementById("changeColor").classList.add("red");
+    }
+    else {
+
+        document.getElementById("clock").className = "blue";
+        document.getElementById("changeColor").classList.remove("red");
+        document.getElementById("changeColor").classList.add("blue");
+    }
+
+}
+
 function clicked(evt) {
 
     /* get the children of editable class and make an array of its children elements
@@ -162,7 +214,7 @@ function clicked(evt) {
                 var sec = parseInt(input[1].value);
                 limitsec = sec;
                 clearInterval(temp);
-                temp = setInterval(updateTime, 1000);
+                temp = setInterval(updateInputTime(limitmin, limitsec), 1000);
 
                 //label.classList.remove("hide");
 
