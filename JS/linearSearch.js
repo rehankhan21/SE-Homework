@@ -1,5 +1,8 @@
-let numArray = [5,2,6,7,30];
-let bool = false;
+//let numArray = [5,2,6,7,30];
+
+function linearSearch(numArray) {
+
+    let bool = false;
 let data = 7;
 let index = 0;
 
@@ -13,8 +16,11 @@ for (let i = 0 ; i < numArray.length; i++) {
 }
 
 if(bool == true) {
-    console.log(data + " is located at index " + index)
+    return data + " is located at index " + index
 }
 else {
-    console.log(data + " is not in the array")
+
+    return data + " is not in the array"
+}
+
 }
