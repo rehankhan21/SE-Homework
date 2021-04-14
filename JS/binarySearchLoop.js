@@ -1,15 +1,29 @@
 function binarySearch(nums, data) {
-    
+
     let tmp = 0;
 
-    for (let i = 0; i < nums.length; i++) {
+        //Linear Sort
+    // for (let i = 0; i < nums.length; i++) {
 
-        for (let j = i + 1; j < nums.length; j++) {
+    //     for (let j = i + 1; j < nums.length; j++) {
 
-            if (nums[i] > nums[j]) {
-                tmp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = tmp;
+    //         if (nums[i] > nums[j]) {
+    //             tmp = nums[i];
+    //             nums[i] = nums[j];
+    //             nums[j] = tmp;
+    //         }
+    //     }
+    // }
+
+    //Bubble Sort
+    for (let i = 0; i < nums.length - 1; i++ ) {
+
+        for (let j = 0; j < nums.length - i - 1; j++) {
+
+            if (nums[j] > nums[j + 1]) {
+                tmp = nums[j];
+                nums[j] = nums[j + 1];
+                nums[j + 1] = tmp;
             }
         }
     }
