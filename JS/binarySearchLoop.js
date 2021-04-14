@@ -1,8 +1,6 @@
-function binarySearch(nums) {
-
-    //let nums = [1, 3, 6, 2, 8, 3, 20]
+function binarySearch(nums, data) {
+    
     let tmp = 0;
-    let data = 1;
 
     for (let i = 0; i < nums.length; i++) {
 
@@ -16,8 +14,6 @@ function binarySearch(nums) {
         }
     }
 
-    console.log(nums);
-
     let left = 0;
     let right = nums.length - 1;
 
@@ -27,7 +23,6 @@ function binarySearch(nums) {
 
 
         if(data == nums[mid]) {
-            //console.log(data + " is at index " + mid);
             return data + " is at index " + mid;
         }
         else if (data < nums[mid]){
@@ -37,16 +32,10 @@ function binarySearch(nums) {
             left  = mid + 1;
         }
 
-        // if(right == left) {
-        //     console.log("number not found")
-        // }
     }
 
-    // let size = nums.length - 1;
-    // console.log(search(nums, 0, size, data));
+    return "number not found in " + nums;
 
 }
 
 
-// let nums = [1, 3, 6, 2, 8, 3, 20]
-// binarySearch(nums);
