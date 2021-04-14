@@ -16,23 +16,27 @@ let student = {
     fname: "Dennis",
     lname: "Cargas",
     subjects: ["math", "social studies", "english"],
-    grades: [80, 70, 90],
-    average: function() {
-        let avg = 0;
+    grades: [80, 70, 100],
+    averageValue: 0,
+    averageArr: function() {
         let total = 0;
         for(let i = 0; i < this.grades.length; i++) {
             
             total += this.grades[i];
         }
 
-        avg = total/this.grades.length;
+        this.averageValue = Math.floor(total/this.grades.length);
 
-        return Math.floor(avg);
+        return this.averageValue;
     },
+
+    // average: function() {
+
+    // }
 
     result: function() {
         
-        if(this.average() > 60){
+        if(this.averageValue > 60){
             return "Student has passed"
         }
         else {
