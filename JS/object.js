@@ -4,7 +4,7 @@ let person = {
     address: "101 somewhere street",
     age: 21,
 
-    fullName: function() {
+    fullName: function () {
         return this.fname + " " + this.lname;
     },
 
@@ -18,14 +18,14 @@ let student = {
     subjects: ["math", "social studies", "english"],
     grades: [80, 70, 100],
     averageValue: 0,
-    averageArr: function() {
+    averageArr: function () {
         let total = 0;
-        for(let i = 0; i < this.grades.length; i++) {
-            
+        for (let i = 0; i < this.grades.length; i++) {
+
             total += this.grades[i];
         }
 
-        this.averageValue = Math.floor(total/this.grades.length);
+        this.averageValue = Math.floor(total / this.grades.length);
 
         return this.averageValue;
     },
@@ -34,13 +34,13 @@ let student = {
 
     // }
 
-    result: function() {
-        
-        if(this.averageValue > 60){
-            return "Student has passed"
+    result: function () {
+
+        if (this.averageValue > 60) {
+            return this.fname + " has passed"
         }
         else {
-            return "Student has failed"
+            return this.fname + " has failed"
         }
     }
 }
