@@ -12,11 +12,19 @@
 
     <div id="fullname"></div>
     <div id="age"></div>
+    <div id="noises"></div>
+    <div id="average"></div>
+    <div id="result"></div>
 
     <script>
     
         document.getElementById("fullname").innerHTML = person.fullName();
         document.getElementById("age").innerHTML = person.age;
+        document.getElementById("noises").innerHTML = person.noises[0];
+
+        //let grades = [20, 10, 30]
+        document.getElementById("average").innerHTML = student.average();
+        document.getElementById("result").innerHTML = student.result();
         
     </script>
 
