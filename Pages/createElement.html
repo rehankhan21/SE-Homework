@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <script src="../JS/createElement.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,15 @@
     
         <div id="div"> hi</div>
 
-        <button onclick=""></button>
+        <button id="button" onclick="changeDom(button)">change me</button>
+        <button id="buttonString" onclick="changeDom(buttonString)"></button>
 
         <script>
-            var txt="";
+            var txt=" ";
 
             //document.createElement("p").append(document.createTextNode("created element in js"))
+            var button = document.getElementById("button");
+            var buttonString = document.getElementById("buttonString");
 
             var div = document.getElementById("div");
 
@@ -32,8 +36,12 @@
             div.append(para, strong, " this is how you create elements using dom manip")
 
             var replace = document.createElement("p");
-            replace.append(document.createTextNode("Replaced"))
-            para.replaceChild(replace, para);
+            var replaceNode = document.createTextNode("replaced")
+            //replace.innerHTML = "replace pls"
+            replace.append(replaceNode)
+
+            para.parentNode.replaceChild(replace, para);
+
 
         </script>
 </body>
