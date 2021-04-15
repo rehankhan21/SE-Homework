@@ -10,6 +10,7 @@
     
 
     <div id="hurry"></div>
+    <div id="im here"></div>
     <div id="setTimeout"></div>
 
     <script>
@@ -17,9 +18,15 @@
        setTimeout(() => {
 
             document.getElementById("setTimeout").innerHTML = "I'm sorry, w8 for me!!!";
-       }, 2000);
+       }, 2500);
 
-       document.getElementById("hurry").innerHTML = "Hurry up";
+       setTimeout(() => {
+        document.getElementById("im here").innerHTML = "I think so"
+       }, 1000);
+
+       document.getElementById("hurry").innerHTML = "Is everyone here?";
+
+
     </script>
 </body>
 </html>
