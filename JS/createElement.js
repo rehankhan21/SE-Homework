@@ -1,4 +1,4 @@
-function changeDom(div) {
+let changeDom = div => {
 
     //let change = document.createElement("p");
     let changeNode = document.createTextNode(" this is from the js file")
@@ -12,7 +12,7 @@ function changeDom(div) {
     //div.append(changeNode)
 }
 
-function changeString(div) {
+let changeString = div => {
 
     //let change = document.createElement("p");
     let changeNode = document.createTextNode(" :this is from the js file")
