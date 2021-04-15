@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <div id="div"> hi</div>
+
+        <button onclick=""></button>
+
+        <script>
+            var txt="";
+
+            //document.createElement("p").append(document.createTextNode("created element in js"))
+
+            var div = document.getElementById("div");
+
+            var para = document.createElement("p");
+
+            var node = document.createTextNode("element made using js")
+
+            para.append(node); // can append anything even regular text or objects;
+
+            var strong = document.createElement("strong");
+            var strongNode = document.createTextNode("strong node")
+
+            strong.appendChild(strongNode) // child can only append with elements and not objects
+
+            div.append(para, strong, " this is how you create elements using dom manip")
+
+            var replace = document.createElement("p");
+            replace.append(document.createTextNode("Replaced"))
+            para.replaceChild(replace, para);
+
+        </script>
+</body>
+</html>

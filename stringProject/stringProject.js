@@ -9,7 +9,7 @@
 
 let userName = window.prompt("Register UserName");
 let password = window.prompt("Register Password");
-let encrpytedPass = " ";
+let encrpytedPass = "";
 
 let trimName = userName.trim().toLowerCase();
 let trimPassword = password.trim().toLowerCase();
@@ -23,17 +23,18 @@ let encrypt = e => {
 
     let randomSymbols = ['!', '@', '#', '$']
     //let newPass = "";
-    let testValue = " ";
+    let testValue = "";
 
     for (let i = 0; i < password.length; i++) {
 
         let temp = randomSymbols[Math.floor(Math.random(4) * randomSymbols.length)]
 
         testValue += temp;
-        encrpytedPass += temp;
+        //encrpytedPass += temp;
 
         //newPass +=  password.replace(password[i], temp);
     }
+    
     return testValue;
 }
 
