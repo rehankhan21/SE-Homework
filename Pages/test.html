@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simone</title>
+    </head>
+
+    <body>
+        <p id="here"></p>
+        <script>
+            let student = {
+                fname: "Simone", lname: "Williamson", math: 60, english: 70,
+                result: 0,
+
+                fullName: function() {
+                    return this.fname + this.lname;
+                }
+
+            
+            }
+
+            document.getElementById("here").innerHTML = student.fullName();
+        </script>
+    </body>
+
+</html>

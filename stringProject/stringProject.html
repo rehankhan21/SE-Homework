@@ -1,6 +1,6 @@
 <html lang="en">
 <head>
-    <script src="stringProject.js"></script>
+    <script src="../stringProject/stringProject.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +12,14 @@
     <button >Register</button>
 </form> -->
 
-<button onclick="encrypt()">Register</button>
+<!-- <button onclick="encrypt()">encrypt password</button> -->
+<br>
+<button onclick="login()">login</button>
+<div id="password"></div>
+
+<script>
+    document.getElementById("password").innerHTML = "your encryped password " + encrypt();
+</script>
     
 </body>
 </html>

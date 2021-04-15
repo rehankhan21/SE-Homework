@@ -1,8 +1,3 @@
-let inputName = "1User"
-let inputPassword = "1password "
-let trimName = inputName.trim().toLowerCase();
-let trimPassword = inputPassword.trim().toLowerCase();
-
 /*  
     Register the user if they do have a log in 
     encrypt the password atfer being registered.
@@ -12,78 +7,90 @@ let trimPassword = inputPassword.trim().toLowerCase();
 
 */
 
+let userName = window.prompt("Register UserName");
+let password = window.prompt("Register Password");
+let encrpytedPass = " ";
+
+let trimName = userName.trim().toLowerCase();
+let trimPassword = password.trim().toLowerCase();
+
 let encrypt = e => {
     // e.preventDefault();
     // alert("form works")
-    
-    // let value = document.getElementById("register").value;
-    // console.log(value);
 
-    let value = window.prompt("Enter Password");
+    /* let password = window.prompt("Enter Password");
+    let userName = window.prompt("Enter UserName"); */
 
     let randomSymbols = ['!', '@', '#', '$']
-    let newPass = "";
-    let testValue = "";
+    //let newPass = "";
+    let testValue = " ";
 
-    for(let i = 0; i < value.length; i++) {
-        
+    for (let i = 0; i < password.length; i++) {
+
         let temp = randomSymbols[Math.floor(Math.random(4) * randomSymbols.length)]
 
         testValue += temp;
+        encrpytedPass += temp;
 
-        newPass +=  value.replace(value[i], temp);
-
-        console.log(value[i] + " value")
-        console.log(newPass + " replacePass");
-        console.log(testValue + " testValue")
+        //newPass +=  password.replace(password[i], temp);
     }
+    return testValue;
 }
 
+console.log(encrpytedPass)
 
-if (trimName == "user" && trimPassword == "password") {
-    console.log("you are loggined in")
+function login() {
 
-    /*  
-        prompt works in webpage
+    let userInput = window.prompt("Enter your username")
+    let passInput = window.prompt("Enter you password")
 
-        verify email address. then input verification code.
+    if (userInput == "" || passInput == "") {
+        alert("No user found");
+    }
 
-        loop a list of items, add buttons thats add items too cart. 
-        put the list of items in an array then loop through the array.
-        to print all the items.
+    if (trimName == userInput && trimPassword == passInput) {
+        alert("you are loggined in");
 
-        if(Cart is not empty){
-            go to cart for checkout
-        }
-
-        in cart 
-
-        if(user is not verified cannot proceed to checkout)
-        else(){
-            go to checkout, output you have been checked out!!!!
-        }
-    */
-}
-else if (trimName != "user" && trimPassword == "password") {
-        console.log(trimName
-            .padEnd(trimName.length + 1, " ")
+        /*  
+           if  prompt works in webpage
+    
+            verify email address. then input verification code???
+    
+            loop a list of items, add buttons thats add items too cart. 
+            put the list of items in an array then loop through the array.
+            to print all the items.
+    
+            if(Cart is not empty){
+                go to cart for checkout
+            }
+    
+            in cart 
+    
+            if(user is not verified cannot proceed to checkout)
+            else(){
+                go to checkout, output you have been checked out!!!!
+            }
+        */
+    }
+    else if (trimName != userInput && trimPassword == passInput) {
+        alert(userInput
+            .padEnd(userInput.length + 1, " ")
             .concat("This is not the correct Username"))
 
+    }
+    else if (trimName == userInput && trimPassword != passInput) {
+        alert((
+            passInput
+                .padEnd(passInput.length + 1, " ")
+                .concat("This is not the correct Password")
+                .replace(passInput, "*****")))
+    }
+    else {
+        alert(
+            userInput
+                .padEnd(userInput.length + 1, " ")
+                .concat(passInput)
+                .padEnd(passInput.length + 1, " ")
+                .concat(" are both wrong"));
+    }
 }
-else if (trimName == "user" && trimPassword != "password" ) {
-    console.log(console.log(
-        trimPassword
-            .padEnd(trimPassword.length + 1, " ")
-            .concat("This is not the correct Password")))
-            .replace(trimPassword, "********")
-}
-else {
-    console.log(
-        trimName
-            .padEnd(trimName + 1, " ")
-            .concat(trimPassword)
-            .padEnd(trimPassword + 1, " ")
-            .concat("are both wrong"));
-}
-
-console.log(inputName.repeat(10))
