@@ -70,13 +70,17 @@
             document.getElementById("h3").style.color = "black";
         }
 
-        document.getElementById("item1").addEventListener("mouseover", mouseoverlist);
+        let newitem = document.getElementById("item1");
+        newitem.addEventListener("mouseover", newItem);
+        //document.getElementById("item1").addEventListener("keypress", newItem)
 
-        function mouseoverlist(){
+        function newItem(){
             let newItem = document.createElement("li");
             newItem.innerHTML = "new event item"
             document.getElementById("list").append(newItem);
         }
+
+        //document.getElementById("list").addEventListener("keypress", newItem)
     </script>
 </body>
 
