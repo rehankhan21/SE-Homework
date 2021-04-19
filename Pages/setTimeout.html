@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <script src="setTimeout.js"></script>
     <meta charset="UTF-8">
@@ -6,26 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <div id="count"></div>
+    <div id="hurry"></div>
+
     <div id="setTimeout"></div>
     <div id="im here"></div>
-    <div id="hurry"></div>
 
     <script>
 
-       setTimeout(() => {
+        let students = ["jim", "bob", "larry"]
+        setTimeout(() => {
+            function count(students) {
+
+                for (let i = 0; i < students.length; i++) {
+                    setTimeout(() => {
+                        document.getElementById("count").innerHTML = i;
+                    }, 1000);
+                   
+                }
+
+            }
+        }, 500);
+        count(students);
+
+
+        setTimeout(() => {
 
             document.getElementById("setTimeout").innerHTML = "I'm sorry, w8 for me!!!";
-       }, 2500);
+        }, 2500);
 
-       setTimeout(() => {
-        document.getElementById("im here").innerHTML = "I think so"
-       }, 1000);
+        function maybe() {
 
-       document.getElementById("hurry").innerHTML = "Is everyone here?";
+            setTimeout(() => {
+                document.getElementById("im here").innerHTML = "I think so"
+            }, 1000);
+        }
+        setTimeout(() => {
+            document.getElementById("im here").innerHTML = "I think so"
+        }, 1000);
+
+        document.getElementById("hurry").innerHTML = "Is everyone here?";
+
 
 
     </script>
 </body>
+
 </html>

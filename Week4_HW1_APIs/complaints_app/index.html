@@ -1,0 +1,222 @@
+<html lang="en">
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="../complaints_app/app.js"></script>
+    <link rel="stylesheet" href="../complaints_app/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>311CallData</title>
+</head>
+
+<body>
+    <header>
+        <h1>WHERE CAN WE CASUE TROUBLE TODAY</h1>
+    </header>
+
+
+    <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
+    <button id="btnQueens" onclick="fetch_data_Queens()">Queens</button>
+    <button id="btnBronx" onclick="fetch_data_Bronx()">Bronx</button>
+    <button id="btnBrooklyn" onclick="fetch_data_Brooklyn()">Brooklyn</button>
+    <button id="btnStatenIsland" onclick="fetch_data_StatenIsland()">StatenIsland</button>
+    <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button>
+    <!-- <div id="ajax_info"></div> -->
+    <ul id="ajax_info">
+    </ul>
+
+
+    <script>
+
+        //document.getElementById("ajax_info").innerHTML = fetch_data();
+
+        // var btn = document.getElementById("btn");
+
+        // document.addEventListener('DOMContentLoaded', init ,false);
+
+
+        // btn.addEventListener(onclick, (function fetch_data($id) {
+        //     $.ajax({
+        //         url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Borough=QUEENS&Agency=NYPD",
+        //         type: "GET",
+        //         data: {
+        //             "$limit": 10,
+        //             "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
+        //         }
+        //     }).then(function (data) {
+        //         alert("Retrieved " + data.length + " records from the dataset!");
+        //         console.log(data);
+
+        //     }, function (data) {
+        //         alert("Failed to retrieve data")
+        //     });
+        // }))
+
+        // function renderHTML(data) {
+        //     var htmlString = "this is a test";
+        //     container.insertAdjacentHTML('beforehand', htmlString);
+
+        // }
+        var list = document.getElementById("ajax_info");
+        let map = new Map();
+        let sol = " ";
+        let counter = 0;
+        let random_index = Math.floor(Math.random() * lim);
+        //let listItem = document.getElementById("listItem");
+        var lim = 10;
+
+        function val() {
+            lim = document.getElementById("input").value;
+        }
+
+        function hidesolution() {
+            var x = document.getElementById("solution");
+            if (x.style.display === "block")
+                x.style.display = "none"
+            else
+                x.style.display = "block"
+        }
+
+        //div.innerHTML = "hello world";
+        //iv.append(document.createTextNode("hello node"));
+        function fetch_data_Queens($id) {
+            list.innerHTML = ""
+            $.ajax({
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=QUEENS",
+                type: "GET",
+                data: {
+                    "$limit": lim,
+                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps",
+                    //"$where": unique_key + Math.random(1000)
+                }
+            }).then(function (data) {
+                alert("Retrieved " + data.length + " records from the dataset!");
+                console.log(data);
+
+                $.each(data, function (key, val) {
+                    let listItem = document.createElement("li")
+                    let button = document.createElement("button");
+                    sol = document.createElement("ol");
+                    sol.append(val.resolution_description);
+                    sol.setAttribute("id", "solution")
+                    counter++;
+                    map.set(key, val.resolution_description);
+                    button.innerText = "what did they do?"
+                    button.setAttribute("onclick", "hidesolution()")
+                    listItem.append(document.createTextNode(val.descriptor))
+                    $(list).append(listItem, button, sol)
+                });
+            }, function (data) {
+                alert("Failed to retrieve data")
+            });
+        }
+
+        function fetch_data_Bronx($id) {
+            list.innerHTML = " "
+            $.ajax({
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=BRONX",
+                type: "GET",
+                data: {
+                    "$limit": lim,
+                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
+                }
+            }).then(function (data) {
+                alert("Retrieved " + data.length + " records from the dataset!");
+                console.log(data);
+
+                $.each(data, function (key, val) {
+                    // let button = document.createElement("button");
+                    // button.innerHTML = "click me pls";
+
+                    let listItem = document.createElement("li")
+                    listItem.append(document.createTextNode(val.descriptor))
+                    $(list).append(listItem)
+                    console.log(val)
+                });
+            }, function (data) {
+                alert("Failed to retrieve data")
+            });
+        }
+
+        function fetch_data_Brooklyn($id) {
+            list.innerHTML = ""
+            $.ajax({
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=BROOKLYN",
+                type: "GET",
+                data: {
+                    "$limit": lim,
+                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
+                }
+            }).then(function (data) {
+                alert("Retrieved " + data.length + " records from the dataset!");
+                console.log(data);
+
+                $.each(data, function (key, val) {
+                    let listItem = document.createElement("li")
+                    listItem.append(document.createTextNode(val.descriptor))
+                    $(list).append(listItem)
+                });
+            }, function (data) {
+                alert("Failed to retrieve data")
+            });
+        }
+
+        function fetch_data_Manhattan($id) {
+            list.innerHTML = ""
+            $.ajax({
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=MANHATTAN",
+                type: "GET",
+                data: {
+                    "$limit": lim,
+                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
+                }
+            }).then(function (data) {
+                alert("Retrieved " + data.length + " records from the dataset!");
+                console.log(data);
+
+                $.each(data, function (key, val) {
+                    let listItem = document.createElement("li")
+                    listItem.append(document.createTextNode(val.descriptor))
+                    $(list).append(listItem)
+                });
+            }, function (data) {
+                alert("Failed to retrieve data")
+            });
+        }
+
+        function fetch_data_StatenIsland($id) {
+            list.innerHTML = ""
+            $.ajax({
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=STATEN ISLAND",
+                type: "GET",
+                data: {
+                    "$limit": lim,
+                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
+                }
+            }).then(function (data) {
+                alert("Retrieved " + data.length + " records from the dataset!");
+                console.log(data);
+
+                $.each(data, function (key, val) {
+                    let listItem = document.createElement("li")
+                    listItem.append(document.createTextNode(val.descriptor))
+                    $(list).append(listItem)
+                });
+            }, function (data) {
+                alert("Failed to retrieve data")
+            });
+        }
+
+
+    </script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script src="../complaints_app/app.js"></script> -->
+</body>
+
+
+
+</html>
