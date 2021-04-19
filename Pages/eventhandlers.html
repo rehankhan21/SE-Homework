@@ -19,12 +19,22 @@
 
     <p id="p1"></p>
 
+    <p id="p2"></p>
+
     <hr>
 
     Enter your name: <input type="type" id="fname">
 
+    <ul id="list">
+        <li id="item1">item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
 
     <script>
+
+        document.getElementById("p2").innerHTML = myFunction;
 
         // Button generates a click event
         // you can invoke the function from external js
@@ -42,7 +52,7 @@
             // this is a callback fucntiocn 
         // }
 
-          function myFunction() {
+           function myFunction() {
 
             //whatever is in the input is the input feilds value
             var x = document.getElementById("fname");
@@ -60,7 +70,13 @@
             document.getElementById("h3").style.color = "black";
         }
 
+        document.getElementById("item1").addEventListener("mouseover", mouseoverlist);
 
+        function mouseoverlist(){
+            let newItem = document.createElement("li");
+            newItem.innerHTML = "new event item"
+            document.getElementById("list").append(newItem);
+        }
     </script>
 </body>
 
