@@ -61,6 +61,7 @@
         var list = document.getElementById("ajax_info");
         let map = new Map();
         let sol = " ";
+        let button = "";
         let counter = 0;
         let random_index = Math.floor(Math.random() * lim);
         //let listItem = document.getElementById("listItem");
@@ -70,8 +71,16 @@
             lim = document.getElementById("input").value;
         }
 
+        document.getElementsByClassName("solButton").addEventListener("click",
+        hidesolution())
+
         function hidesolution() {
-            var x = document.getElementById("solution");
+
+            var value3 = document.getElementsByClassName("solButton")[3].value
+            console.log(value3)
+            var value2 = document.getElementsByClassName("solution")[0].value
+            console.log(value2)
+            var x = document.getElementsByClassName("solution")[0];
             if (x.style.display === "block")
                 x.style.display = "none"
             else
@@ -96,14 +105,19 @@
 
                 $.each(data, function (key, val) {
                     let listItem = document.createElement("li")
-                    let button = document.createElement("button");
+                    button = document.createElement("button");
+                    button.setAttribute("class", "solButton")
+                    button.value = counter;
                     sol = document.createElement("ol");
                     sol.append(val.resolution_description);
-                    sol.setAttribute("id", "solution")
-                    counter++;
+                    sol.setAttribute("class", "solution")
+                    //sol.setAttribute("id", "solution")
+                    sol.setAttribute("value", counter)
+                    sol.value = counter;
+                    counter+=1;
                     map.set(key, val.resolution_description);
                     button.innerText = "what did they do?"
-                    button.setAttribute("onclick", "hidesolution()")
+                    //button.setAttribute("onclick", "hidesolution()")
                     listItem.append(document.createTextNode(val.descriptor))
                     $(list).append(listItem, button, sol)
                 });

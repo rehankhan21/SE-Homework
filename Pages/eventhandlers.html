@@ -1,0 +1,67 @@
+<html lang="en">
+
+<head>
+    <script src="../JS/eventhandler.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3 id="h3">This example uses the addEventListener() method to listen to different types of events</h3>
+
+    <button id="btn1">Click here</button>
+
+    <!-- this keyword means the current object/element -->
+    <button onclick="this.innerHTML='button clicked'">click here</button>
+
+    <p id="p1"></p>
+
+    <hr>
+
+    Enter your name: <input type="type" id="fname">
+
+
+    <script>
+
+        // Button generates a click event
+        // you can invoke the function from external js
+        document.getElementById("btn1").addEventListener("click", function () {
+            document.getElementById("p1").innerHTML = "Hello handler";
+        });
+
+        // second argument doesnt have parenthesis becuase, we are passing the whole function as arguments,
+        // functions value is the functions body
+        // we dont want myFunction too run, until the eventListener runs
+        document.getElementById("fname").addEventListener("change", myFunction);
+
+
+        // myFunction = function() {
+            // this is a callback fucntiocn 
+        // }
+
+          function myFunction() {
+
+            //whatever is in the input is the input feilds value
+            var x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        document.getElementById("h3").addEventListener("mouseover", mouseover);
+        document.getElementById("h3").addEventListener("mouseout", mouseout);
+
+        function mouseover() {
+            document.getElementById("h3").style.color = "red";
+        }
+
+        function mouseout() {
+            document.getElementById("h3").style.color = "black";
+        }
+
+
+    </script>
+</body>
+
+</html>
