@@ -14,11 +14,12 @@ let p = new Promise((resolve, reject) => {
 
 
     let arr = [3,1,56,21,34,2];
+    // let arr = [];
     if (arr.length != 0) {
         resolve(arr);
     }
     else {
-        reject("failed");
+        reject("Array is empty");
     }
 })
 
@@ -47,11 +48,6 @@ p.then((value) => {
     return value;
 }).then((value) => {
 
-    // if (value % 2 == 0)
-    //     console.log(value + " is an even number");
-    // else
-    //     console.log(value + " is an odd number");
-
     //binarySearch Recurr
     let binarySearch = (array, left, right, x) => {
 
@@ -70,10 +66,10 @@ p.then((value) => {
             }
         }
 
-        return -1;
+        return "number not found";
     }
 
-    console.log(binarySearch(value, 0, value.length - 1, 21))
+    console.log(binarySearch(value, 0, value.length - 1, 34))
     
 }).catch((value) => {
     console.log("printing result withn 'catch'... " + value);
