@@ -47,13 +47,14 @@
 
             displayStudents() {
                 this.fullName = this.fname + " " + this.lname;
-                display = display + "<li>" + this.id + ". " + this.fullName + "</li>"
+                display = display + "<li>" + this.id + ". " + this.fullName + ", " + this.avg + "</li>"
             }
 
             calculateAvg(a, b, c, d) {
 
                 let sum = a + b + c + d;
-                display = display + "<li>" + "Avg: " + sum/arguments.length + "</li>";
+                this.avg = sum/arguments.length;
+                //display = display +  " ," +" Avg: " + sum/arguments.length + "</li>";
             }
 
 
@@ -62,12 +63,12 @@
         display = display + "</ul>" 
 
         const student1 = new Student ("Colton", "Wright")
-        student1.displayStudents();
         student1.calculateAvg(90,90,90,420);
+        student1.displayStudents();
 
         const student2 = new Student ("Julian", "Molina")
-        student2.displayStudents()
         student2.calculateAvg(85,85,90, 90)
+        student2.displayStudents()
 
         document.getElementById("perscholas").innerHTML = SCHOOL;
         document.getElementById("student").innerHTML = display;
