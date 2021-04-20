@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="company"></h1>
+    <div id="text"></div>
+    
+    <script>
+        var text = "<ul>"
+
+        // company names are always caputalized
+        const COMPANY = "<u>"+"ABC ENTERPRISE"+"</u>"
+        var idnum = 0 // declared globally
+
+        //encapsulation is all the code that is within the class block you created.
+        // data and methods are stored in one block, is encapsulation
+        class Employee {
+
+            // constructor is a keyword for class
+            constructor(fname, lname) {
+                this.fname = fname;
+                this.lname = lname;
+                this.id = ++idnum;
+            } //closing constructor
+
+
+            displayEmployee()
+            {
+                text=text + "<l1>" + this.id + ". " + this.fullName + "</li>";
+            }
+
+            getFullName() {
+                let fullName = this.fname + this.lname;
+                // this is how we create new properties
+                this.fullName = fullName;
+            }   
+
+            
+        }
+
+        text = text + "</ul>"
+
+        const emp1 = new Employee("James", "Ford");
+        emp1.getFullName();
+        emp1.displayEmployee();
+
+        document.getElementById("company").innerHTML = COMPANY;
+        document.getElementById("text").innerHTML = text;
+    </script>
+</body>
+</html>

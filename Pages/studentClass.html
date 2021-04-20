@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="perscholas"></h1>
+    <P id="student"></P>
+
+    <script>
+        /* class student 
+            properties:
+                id
+                first naem
+                last name
+                address
+                phone
+                email
+            methods:
+                getStudentInfo()
+                displayStudents()
+                createStudentEmail()
+                calculateAverage()
+        */
+
+        const SCHOOL = "Per Scholas RTT-06-2021"
+        var display = "<ul>"
+        var studentId = 0
+        
+        class Student {
+
+            constructor(fname, lname, address, phone, email) {
+
+                this.id = ++studentId;
+                this.fname = fname;
+                this.lname = lname;
+                this.address = address;
+                this.phone = phone;
+                this.email = email;
+            }
+
+            getStudentInfo() {
+
+            }
+
+            displayStudents() {
+                this.fullName = this.fname + " " + this.lname;
+                display = display + "<li>" + this.id + ". " + this.fullName + "</li>"
+            }
+
+            calculateAvg(a, b, c, d) {
+
+                let sum = a + b + c + d;
+                display = display + "<li>" + "Avg: " + sum/arguments.length + "</li>";
+            }
+
+
+        }
+
+        display = display + "</ul>" 
+
+        const student1 = new Student ("Colton", "Wright")
+        student1.displayStudents();
+        student1.calculateAvg(90,90,90,420);
+
+        const student2 = new Student ("Julian", "Molina")
+        student2.displayStudents()
+        student2.calculateAvg(85,85,90, 90)
+
+        document.getElementById("perscholas").innerHTML = SCHOOL;
+        document.getElementById("student").innerHTML = display;
+    </script>
+</body>
+</html>
