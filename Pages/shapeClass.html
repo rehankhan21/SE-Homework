@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="circle"></h1>
+    <p id="area"></p>
+    <p id="sides"></p>
+
+    <h1 id="circle2"></h1>
+    <p id="area2"></p>
+    <p id="sides2"></p>
+
+    <h1 id="rectangle"></h1>
+    <p id="arear"></p>
+    <p id="sidesr"></p>
+
+    <h1 id="rectangle2"></h1>
+    <p id="arear2"></p>
+    <p id="sidesr2"></p>
+
+    <h1 id="square"></h1>
+    <p id="areas"></p>
+    <p id="sidess"></p>
+
+    <h1 id="square2"></h1>
+    <p id="areas2"></p>
+    <p id="sidess2"></p>
+    <script> 
+    
+    class Circle {
+
+        constructor(diameter) {
+
+            this.diameter = diameter;
+        }  
+
+        circle_area() {
+            this.raduis = this.diameter/2;
+            this.areaCircle = (Math.PI * Math.pow(this.raduis, 2));
+            return this.areaCircle;
+        }
+
+        total_sides() {
+            this.sides = 0;
+            return this.sides
+        }
+
+    }
+
+    class Rectangle {
+
+        static count = 0;
+        constructor(length, width) {
+
+            this.length = length;
+            this.width = width;
+        }
+
+        static countRectangle() {
+            Rectangle.count++;
+        }
+
+        rectangle_area() {
+            this.area = this.length * this.width;
+            return this.area;
+        }
+
+        total_sides() {
+            return this.sides = 4;
+        }
+
+
+    }
+
+    class Square {
+
+        constructor(side) {
+
+            this.side = side
+        }
+
+        square_area() {
+            return this.area = this.side * this.side;
+        }
+
+        total_sides() {
+            return this.sides = 4;
+        }
+    }
+
+    let circle1 = new Circle(20);
+    let circle2 = new Circle(8);
+
+    document.getElementById("circle").innerHTML = "Circle1";
+    document.getElementById("area").innerHTML = "area of circle is : " + circle1.circle_area();
+    document.getElementById("sides").innerHTML = "total number of sides is : "  + circle1.total_sides();
+
+    document.getElementById("circle2").innerHTML = "Circle2";
+    document.getElementById("area2").innerHTML = "area of circle is : " + circle2.circle_area();
+    document.getElementById("sides2").innerHTML = "total number of sides is : "  + circle2.total_sides();
+
+
+    let rectangle1 = new Rectangle(5, 4);
+    Rectangle.countRectangle();
+    let rectangle2 = new Rectangle(8, 9);
+    Rectangle.countRectangle();
+
+    document.getElementById("rectangle").innerHTML = "Rectangle1";
+    document.getElementById("arear").innerHTML = "area of rectangle is :" + rectangle1.rectangle_area();
+    document.getElementById("sidesr").innerHTML = "total number of sides is :" + rectangle1.total_sides();
+
+    document.getElementById("rectangle2").innerHTML = "Rectangle2";
+    document.getElementById("arear2").innerHTML = "area of rectangle is :" + rectangle2.rectangle_area();
+    document.getElementById("sidesr2").innerHTML = "total number of sides is :" + rectangle2.total_sides() + " Total number of rectangles is : " + Rectangle.count;
+
+    let square1 = new Square(8);
+    let square2 = new Square(10);
+
+    document.getElementById("square").innerHTML = "Square1";
+    document.getElementById("areas").innerHTML = "area of square is : " + square1.square_area();
+    document.getElementById("sidess").innerHTML = "total number of sides is : " + square1.total_sides();
+
+    document.getElementById("square2").innerHTML = "Square2";
+    document.getElementById("areas2").innerHTML = "area of square is : " + square2.square_area();
+    document.getElementById("sidess2").innerHTML = "total number of sides is : " + square2.total_sides();
+
+    </script>
+    
+</body>
+</html>

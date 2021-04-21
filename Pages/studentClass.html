@@ -31,6 +31,7 @@
         const SCHOOL = "Per Scholas RTT-06-2021"
         var display = "<ul>"
         var studentId = 0
+        let studentMap = new Map();
         
         class Student {
 
@@ -62,6 +63,7 @@
 
             displayStudents() {
                 this.fullName = this.fname + " " + this.lname;
+                studentMap.set(this.id, this.fullName);
                 display = display + "<li>" + this.id + ". " + this.fullName + ", " + "Avg: " + this.avg + "</li>"
             }
 
@@ -98,14 +100,14 @@
         Student.countStudent();
 
         arrGrades = [66, 67, 64, 100]
-        const student3 = new Student ("Jae", "Ko")
+        const student3 = new Student ("Jae", "Kool")
         student3.calculateAvg(arrGrades)
         student3.displayStudents()
         Student.countStudent();
 
         document.getElementById("perscholas").innerHTML = SCHOOL;
         document.getElementById("student").innerHTML = display;
-        document.getElementById("totalStudents").innerHTML = "Total number of students in class: " + Student.count;
+        document.getElementById("totalStudents").innerHTML = "Total number of students in class: " + Student.count + " Map " + studentMap.get(1);
     </script>
 </body>
 </html>
