@@ -127,10 +127,13 @@
         student2.getClasses();
         Student.countStudent();
 
-        arrGrades = [66, 67, 64, 100]
-        const student3 = new Student ("Jae", "Kool")
+        arrGrades = [100, 100, 99, 100]
+        arrClasses = ["Energy 1000", " Crystalism 420", " React 200"];
+        const student3 = new Student ("Jae", "Ye Kool", arrClasses, "Life")
         student3.calculateAvg(arrGrades)
         student3.displayStudents()
+        student3.getMajor();
+        student3.getClasses();
         Student.countStudent();
 
         document.getElementById("perscholas").innerHTML = SCHOOL;
