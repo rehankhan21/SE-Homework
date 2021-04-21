@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>JS Class Inhertance practice</h1>
+
+    <div id="parent"></div>
+    <br>
+    <div id="child"></div>
+
+    <script>
+        // class model extends Car{}, this is how make a child class of a super class/parent class
+        // everything in parent class is avaible too the child
+        // you have to call the parent constructor in the child constructor, thats how you access the parent constructor
+        // write super(argument), super is a keyword, to use parent constructor
+        // carname is assigned in parent class from child constructor but it is accessible in child class
+        // super constructor
+        // if we need the parent constructor that needs to be done first in the child constructor
+
+        class Car {
+            constructor(brand) {
+                this.car = brand;
+            }
+
+            present() {
+                return 'I hace a ' + this.car;
+            }
+        }
+
+
+
+
+        class Model extends Car {
+
+            constructor(brand, mod, year) {
+                super(brand);
+                this.model = mod;
+                this.year = year;
+            }
+
+            show() {
+                return 'i have a ' + this.car + " and " + this.model + " and " + this.year;
+            }
+        }
+
+
+        let myCar = new Model(
+            "ford",
+            "mustang",
+            2000
+        )
+
+        document.getElementById("parent").innerHTML = myCar.present();
+        document.getElementById("child").innerHTML = myCar.show();
+
+    </script>
+</body>
+
+</html>

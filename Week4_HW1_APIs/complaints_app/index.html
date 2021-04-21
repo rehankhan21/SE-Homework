@@ -16,12 +16,20 @@
     </header>
 
 
-    <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
+    <div class="container">
+        <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
+        <button id="btnQueens" onclick="fetch_data_Queens()">Queens</button>
+        <button id="btnBronx" onclick="fetch_data()">BRONX</button>
+        <button id="btnBrooklyn" onclick="fetch_data_Brooklyn()">Brooklyn</button>
+        <button id="btnStatenIsland" onclick="fetch_data_StatenIsland()">StatenIsland</button>
+        <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button>
+    </div>
+    <!-- <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
     <button id="btnQueens" onclick="fetch_data_Queens()">Queens</button>
     <button id="btnBronx" onclick="fetch_data_Bronx()">Bronx</button>
     <button id="btnBrooklyn" onclick="fetch_data_Brooklyn()">Brooklyn</button>
     <button id="btnStatenIsland" onclick="fetch_data_StatenIsland()">StatenIsland</button>
-    <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button>
+    <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button> -->
     <!-- <div id="ajax_info"></div> -->
     <ul id="ajax_info">
     </ul>
@@ -72,7 +80,7 @@
         }
 
         document.getElementsByClassName("solButton").addEventListener("click",
-        hidesolution())
+            hidesolution())
 
         function hidesolution() {
 
@@ -114,7 +122,7 @@
                     //sol.setAttribute("id", "solution")
                     sol.setAttribute("value", counter)
                     sol.value = counter;
-                    counter+=1;
+                    counter += 1;
                     map.set(key, val.resolution_description);
                     button.innerText = "what did they do?"
                     //button.setAttribute("onclick", "hidesolution()")
@@ -124,6 +132,24 @@
             }, function (data) {
                 alert("Failed to retrieve data")
             });
+        }
+
+        function fetch_data() {
+
+            // setAttributeNode ??
+            // node.hidden = true
+            // event.target.nextSibling
+            let borough = event.target.innerHTML;
+        
+            fetch("https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=" + borough + "&$limit=" + lim)
+                .then((resData) => resData.json())
+                .then((jResData) => display = () => {
+
+                    console.log(jResData);
+                })
+                .catch(
+                    alert("fetch failed")
+                )
         }
 
         function fetch_data_Bronx($id) {

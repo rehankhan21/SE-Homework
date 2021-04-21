@@ -32,8 +32,26 @@
         var display = "<ul>"
         var studentId = 0
         let studentMap = new Map();
+
+        class Major {
+
+            constructor(major, classes) {
+                this.major = major;
+                this.classes = classes;
+            }
+            
+            getMajor() {
+
+                display = display + "Majoring in: " + this.major + ", ";
+            }
+
+            getClasses() {
+                display = display + "Classes: " + this.classes + "</li>";
+            }
+
+        }
         
-        class Student {
+        class Student extends Major {
 
             // keep a counter for the number of objects, but only at the class level, not the object
             // we keep it as a class variable not as an object property 
@@ -42,14 +60,16 @@
 
             static count = 0;
 
-            constructor(fname, lname, address, phone, email) {
+            constructor(fname, lname, classes, major) {
 
+                super(major, classes)
                 this.id = ++studentId;
                 this.fname = fname;
                 this.lname = lname;
-                this.address = address;
+
+                /* this.address = address;
                 this.phone = phone;
-                this.email = email;
+                this.email = email; */
             }
 
             // we use static methods to change static methods or static varibales
@@ -64,7 +84,7 @@
             displayStudents() {
                 this.fullName = this.fname + " " + this.lname;
                 studentMap.set(this.id, this.fullName);
-                display = display + "<li>" + this.id + ". " + this.fullName + ", " + "Avg: " + this.avg + "</li>"
+                display = display + "<li>" + this.id + ". " + this.fullName + ", " + "Avg: " + this.avg + ", "
             }
 
             calculateAvg(arr) {
@@ -88,15 +108,23 @@
         display = display + "</ul>" 
 
         let arrGrades = [80, 80, 90, 85];
+        let arrClasses = ["Eng 101", " Math 100", " HTML 400"]
 
-        const student1 = new Student ("Colton", "Wright")
+        const student1 = new Student ("Colton", "Wright", arrClasses, "Being A Cool Dude")
         student1.calculateAvg(arrGrades);
         student1.displayStudents();
+        student1.getMajor();
+        student1.getClasses();
         Student.countStudent();
 
-        const student2 = new Student ("Julian", "Molina")
-        student2.calculateAvg(arrGrades)
+        arrGrades = [80, 70, 90, 85];
+        arrClasses = ["CSCI 101", " Existentialism 420", " CSS 200"];
+
+        const student2 = new Student ("Julian", "Molina", arrClasses, "Computer Science")
+        student2.calculateAvg(arrGrades);
         student2.displayStudents()
+        student2.getMajor();
+        student2.getClasses();
         Student.countStudent();
 
         arrGrades = [66, 67, 64, 100]
