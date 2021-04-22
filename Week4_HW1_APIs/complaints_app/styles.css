@@ -20,6 +20,8 @@ ul {
 
 .solButton {
     margin-bottom: 10px;
+    position: fixed;
+    right: 500px;
 }
  
 #solution {

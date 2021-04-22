@@ -84,8 +84,8 @@
                     button.setAttribute("onclick", "hidesolution()")
 
                     // populating the list with the reported crime description
-                    listItem.append(document.createTextNode(val.descriptor))
-                    $(list).append(listItem, button, sol)
+                    listItem.append(document.createTextNode(val.descriptor), button)
+                    $(list).append(listItem, sol)
                 });
             }, function (data) {
                 alert("Failed to retrieve data")
