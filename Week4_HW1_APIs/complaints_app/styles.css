@@ -6,6 +6,17 @@
 /* #ajax_info {
     display: inline;
 } */
+h1 {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+}
+
+ul {
+    margin-left: 20%;
+}
 
 .solButton {
     margin-bottom: 10px;
