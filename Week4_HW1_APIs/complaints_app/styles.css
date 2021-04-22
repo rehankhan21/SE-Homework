@@ -6,6 +6,10 @@
 /* #ajax_info {
     display: inline;
 } */
+
+.solButton {
+    margin-bottom: 10px;
+}
  
 #solution {
     display: none;
@@ -13,4 +17,5 @@
 
 .solution {
     display: none;
+    margin-bottom: 5px;
 }

@@ -18,89 +18,42 @@
 
     <div class="container">
         <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
-        <button id="btnQueens" onclick="fetch_data_Queens()">Queens</button>
-        <button id="btnBronx" onclick="fetch_data()">BRONX</button>
-        <button id="btnBrooklyn" onclick="fetch_data_Brooklyn()">Brooklyn</button>
-        <button id="btnStatenIsland" onclick="fetch_data_StatenIsland()">StatenIsland</button>
-        <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button>
+        <button id="btnQueens" onclick="fetch_data_Ajax()">Queens</button>
+        <button id="btnBronx" onclick="fetch_data_Ajax()">Bronx</button>
+        <button id="btnBrooklyn" onclick="fetch_data_Ajax()">Brooklyn</button>
+        <button id="btnStatenIsland" onclick="fetch_data_Ajax()">Staten Island</button>
+        <button id="btnManhattan" onclick="fetch_data_Ajax()">Manhattan</button>
     </div>
-    <!-- <input id="input" placeholder="# of complaints" type="text" onchange="val(this.value)">
-    <button id="btnQueens" onclick="fetch_data_Queens()">Queens</button>
-    <button id="btnBronx" onclick="fetch_data_Bronx()">Bronx</button>
-    <button id="btnBrooklyn" onclick="fetch_data_Brooklyn()">Brooklyn</button>
-    <button id="btnStatenIsland" onclick="fetch_data_StatenIsland()">StatenIsland</button>
-    <button id="btnManhattan" onclick="fetch_data_Manhattan()">Manhattan</button> -->
-    <!-- <div id="ajax_info"></div> -->
+
+
     <ul id="ajax_info">
     </ul>
 
 
     <script>
 
-        //document.getElementById("ajax_info").innerHTML = fetch_data();
+        let list = document.getElementById("ajax_info");
 
-        // var btn = document.getElementById("btn");
-
-        // document.addEventListener('DOMContentLoaded', init ,false);
-
-
-        // btn.addEventListener(onclick, (function fetch_data($id) {
-        //     $.ajax({
-        //         url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Borough=QUEENS&Agency=NYPD",
-        //         type: "GET",
-        //         data: {
-        //             "$limit": 10,
-        //             "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
-        //         }
-        //     }).then(function (data) {
-        //         alert("Retrieved " + data.length + " records from the dataset!");
-        //         console.log(data);
-
-        //     }, function (data) {
-        //         alert("Failed to retrieve data")
-        //     });
-        // }))
-
-        // function renderHTML(data) {
-        //     var htmlString = "this is a test";
-        //     container.insertAdjacentHTML('beforehand', htmlString);
-
-        // }
-        var list = document.getElementById("ajax_info");
-        let map = new Map();
-        let sol = " ";
+        let sol = "";
         let button = "";
         let counter = 0;
-        let random_index = Math.floor(Math.random() * lim);
+        //let random_index = Math.floor(Math.random() * lim);
         //let listItem = document.getElementById("listItem");
-        var lim = 10;
 
+        // The default number of complaints is 10
+        let lim = 10;
+
+        // This assigns the user inputed number of complaints to limit
         function val() {
             lim = document.getElementById("input").value;
         }
 
-        document.getElementsByClassName("solButton").addEventListener("click",
-            hidesolution())
-
-        function hidesolution() {
-
-            var value3 = document.getElementsByClassName("solButton")[3].value
-            console.log(value3)
-            var value2 = document.getElementsByClassName("solution")[0].value
-            console.log(value2)
-            var x = document.getElementsByClassName("solution")[0];
-            if (x.style.display === "block")
-                x.style.display = "none"
-            else
-                x.style.display = "block"
-        }
-
-        //div.innerHTML = "hello world";
-        //iv.append(document.createTextNode("hello node"));
-        function fetch_data_Queens($id) {
+        function fetch_data_Ajax($id) {
             list.innerHTML = ""
+            let borough = event.target.innerHTML;
+            console.log(borough)
             $.ajax({
-                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=QUEENS",
+                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=" + borough.toUpperCase(),
                 type: "GET",
                 data: {
                     "$limit": lim,
@@ -113,19 +66,24 @@
 
                 $.each(data, function (key, val) {
                     let listItem = document.createElement("li")
+
+                    // Making a button for each crime description
                     button = document.createElement("button");
                     button.setAttribute("class", "solButton")
                     button.value = counter;
+
+                    // Populating the solution tags
                     sol = document.createElement("ol");
                     sol.append(val.resolution_description);
                     sol.setAttribute("class", "solution")
-                    //sol.setAttribute("id", "solution")
                     sol.setAttribute("value", counter)
-                    sol.value = counter;
+                    // Setting a counter for when you click it knows which solution too display
                     counter += 1;
-                    map.set(key, val.resolution_description);
+
                     button.innerText = "what did they do?"
-                    //button.setAttribute("onclick", "hidesolution()")
+                    button.setAttribute("onclick", "hidesolution()")
+
+                    // populating the list with the reported crime description
                     listItem.append(document.createTextNode(val.descriptor))
                     $(list).append(listItem, button, sol)
                 });
@@ -134,120 +92,37 @@
             });
         }
 
-        function fetch_data() {
+        function hidesolution() {
+            counter = 0;
+            let value = event.target.value;
+            var x = document.getElementsByTagName("ol");
+            // console.log(value)
+            // console.log(document.getElementsByTagName("ol"))
+            if (x[value].style.display == "block")
+                x[value].style.display = "none"
+            else
+                x[value].style.display = "block"
+        
+
+        }
+
+        /*function fetch_data() {
 
             // setAttributeNode ??
             // node.hidden = true
             // event.target.nextSibling
-            let borough = event.target.innerHTML;
-        
-            fetch("https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=" + borough + "&$limit=" + lim)
+            //let borough = event.target.innerHTML;
+
+            fetch("https://data.cityofnewyork.us/resource/erm2-nwe9.json")
                 .then((resData) => resData.json())
-                .then((jResData) => display = () => {
+                .then((jResData) => function display() {
 
                     console.log(jResData);
                 })
                 .catch(
                     alert("fetch failed")
                 )
-        }
-
-        function fetch_data_Bronx($id) {
-            list.innerHTML = " "
-            $.ajax({
-                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=BRONX",
-                type: "GET",
-                data: {
-                    "$limit": lim,
-                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
-                }
-            }).then(function (data) {
-                alert("Retrieved " + data.length + " records from the dataset!");
-                console.log(data);
-
-                $.each(data, function (key, val) {
-                    // let button = document.createElement("button");
-                    // button.innerHTML = "click me pls";
-
-                    let listItem = document.createElement("li")
-                    listItem.append(document.createTextNode(val.descriptor))
-                    $(list).append(listItem)
-                    console.log(val)
-                });
-            }, function (data) {
-                alert("Failed to retrieve data")
-            });
-        }
-
-        function fetch_data_Brooklyn($id) {
-            list.innerHTML = ""
-            $.ajax({
-                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=BROOKLYN",
-                type: "GET",
-                data: {
-                    "$limit": lim,
-                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
-                }
-            }).then(function (data) {
-                alert("Retrieved " + data.length + " records from the dataset!");
-                console.log(data);
-
-                $.each(data, function (key, val) {
-                    let listItem = document.createElement("li")
-                    listItem.append(document.createTextNode(val.descriptor))
-                    $(list).append(listItem)
-                });
-            }, function (data) {
-                alert("Failed to retrieve data")
-            });
-        }
-
-        function fetch_data_Manhattan($id) {
-            list.innerHTML = ""
-            $.ajax({
-                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=MANHATTAN",
-                type: "GET",
-                data: {
-                    "$limit": lim,
-                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
-                }
-            }).then(function (data) {
-                alert("Retrieved " + data.length + " records from the dataset!");
-                console.log(data);
-
-                $.each(data, function (key, val) {
-                    let listItem = document.createElement("li")
-                    listItem.append(document.createTextNode(val.descriptor))
-                    $(list).append(listItem)
-                });
-            }, function (data) {
-                alert("Failed to retrieve data")
-            });
-        }
-
-        function fetch_data_StatenIsland($id) {
-            list.innerHTML = ""
-            $.ajax({
-                url: "https://data.cityofnewyork.us/resource/erm2-nwe9.json?Agency=NYPD&Borough=STATEN ISLAND",
-                type: "GET",
-                data: {
-                    "$limit": lim,
-                    "$$app_token": "OYJfPjS2bbNL9CbTh72DlkOps"
-                }
-            }).then(function (data) {
-                alert("Retrieved " + data.length + " records from the dataset!");
-                console.log(data);
-
-                $.each(data, function (key, val) {
-                    let listItem = document.createElement("li")
-                    listItem.append(document.createTextNode(val.descriptor))
-                    $(list).append(listItem)
-                });
-            }, function (data) {
-                alert("Failed to retrieve data")
-            });
-        }
-
+        }*/
 
     </script>
 
