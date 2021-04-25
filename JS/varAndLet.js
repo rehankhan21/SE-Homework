@@ -41,21 +41,25 @@
 //  var varnum = 1;
 
 //  let letnum = 1;
-let x = true;
+// let x = true;
 
- function scopeTest() {
-    let letnum = 2;
+//  function scopeTest() {
+//     let letnum = 2;
 
-    if(x = true){
-        var varnum = 1;
-        let letnum = 1;
-    }
+//     if(x = true){
+//         var varnum = 1;
+//         let letnum = 1;
+//     }
 
-    console.log(varnum);
-    console.log(letnum);
+//     console.log(varnum);
+//     console.log(letnum);
 
- }
+//  }
 
  //console.log(varnum);
  
- scopeTest();
+
+
+ let digit = "1111"
+
+ console.log(digit.padStart(16, '*'))
