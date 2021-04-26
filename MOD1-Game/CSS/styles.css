@@ -1,0 +1,30 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+
+.game-board {
+
+    width: 80vw;
+    height: 100vh;
+
+    margin-left: 10%;
+   
+    border: 1px dotted black;
+    font-family: sans-serif;
+    
+    font-weight: bold;
+    color: white;
+    
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+}
+
+.game-board-slot {
+
+    border: 1px solid black;
+}
