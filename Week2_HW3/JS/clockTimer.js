@@ -215,7 +215,7 @@ function clicked(evt) {
                 var sec = parseInt(input[1].value);
                 limitsec = sec;
                 clearInterval(temp);
-                temp = setInterval(updateInputTime(limitmin, limitsec), 1000);
+                temp = setInterval(updateTime(limitmin, limitsec), 1000);
 
                 //label.classList.remove("hide");
 
