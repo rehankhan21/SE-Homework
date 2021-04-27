@@ -1,14 +1,27 @@
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="../MOD1-Game/CSS/styles.css">
+    <script type="javascript" src="../MOD1-Game/JS/app.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="game-board">
+        <!-- row 1 -->
+        <div class="game-board-slot" id="white"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+
+        <!-- row 2 -->
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
@@ -16,10 +29,62 @@
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
+
+        <!-- row 3 -->
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
         <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+
+        <!-- row 4 -->
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+
+        <!-- row 5 -->
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+
+        <!-- row 6 -->
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+        <div class="game-board-slot"></div>
+
     </div>
-    
+
+    <script>
+
+        document.getElementsByClassName("game-board-slot")[1].addEventListener("click", color);
+
+        function color(e) {
+
+            //document.getElementById("white")
+            if (e.target.contains("white")) {
+                e.target.remove("white");
+                e.target.add("blue");
+            }
+        }
+
+    </script>
+
+    <script type="javascript" src="../MOD1-Game/JS/app.js"></script>
+
 </body>
+
 </html>
