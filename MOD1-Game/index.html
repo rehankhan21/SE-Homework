@@ -72,11 +72,21 @@
 
         class Players {
 
-            constructor() {
+            constructor(color, name) {
+                this.color = color;
+                this.name = name;
             }
         }
 
-        let currentPlayer = "blue"
+        let playerName = window.prompt("Enter Player 1s name: ")
+        player_1 = new Players("blue", playerName);
+
+        playerName = window.prompt("Enter Player 2s name: ")
+        player_2 = new Players("red", playerName);
+
+        //let currentPlayer = "blue"
+
+        let currentPlayer = player_1;
 
         let slots = document.getElementsByClassName("game-board-slot");
         let blue = 0;
@@ -93,17 +103,17 @@
         function color(e) {
 
             //document.getElementById("white")
-            if (e.target.classList.contains("white") && currentPlayer == "blue") {
+            if (e.target.classList.contains("white") && currentPlayer == player_1) {
                 e.target.classList.remove("white");
                 e.target.classList.add("blue");
                 e.target.classList.toggle("flag");
-                currentPlayer = "red"
+                currentPlayer = player_2;
             }
-            else if (e.target.classList.contains("white") && currentPlayer == "red") {
+            else if (e.target.classList.contains("white") && currentPlayer == player_2) {
                 e.target.classList.remove("white");
                 e.target.classList.add("red");
                 e.target.classList.toggle("flag");
-                currentPlayer = "blue"
+                currentPlayer = player_1;
             }
         }
 
@@ -170,7 +180,7 @@
                     //slots[i].classList.toggle("flag")
 
                     if (blue == 4) {
-                        alert("blue wins")
+                        alert(player_1.name + " wins")
                         //reset();
                         break;
                     }
@@ -182,7 +192,7 @@
                     //slots[i].classList.toggle("flag")
 
                     if (red == 4) {
-                        alert("red wins")
+                        alert( player_2.name + " wins")
                         //reset();
                         break;
                     }
