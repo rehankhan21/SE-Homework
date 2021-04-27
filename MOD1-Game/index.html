@@ -13,71 +13,182 @@
 
     <div class="game-board">
         <!-- row 1 -->
-        <div class="game-board-slot" id="white"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
 
         <!-- row 2 -->
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
 
         <!-- row 3 -->
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
 
         <!-- row 4 -->
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
 
         <!-- row 5 -->
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
 
         <!-- row 6 -->
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-        <div class="game-board-slot"></div>
-
+        <div class="game-board-slot white" id="white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
+        <div class="game-board-slot white"></div>
     </div>
 
+    <button onclick="reset()">Reset Board</button>
     <script>
 
-        document.getElementsByClassName("game-board-slot")[1].addEventListener("click", color);
+        class Players {
+
+            constructor() {
+            }
+        }
+
+        let currentPlayer = "blue"
+
+        let slots = document.getElementsByClassName("game-board-slot");
+        let blue = 0;
+        let red = 0;
+
+        for (let i = 0; i < slots.length; i++) {
+
+            slots[i].addEventListener("click", color);
+            slots[i].addEventListener("click", checkState);
+
+        }
+
 
         function color(e) {
 
             //document.getElementById("white")
-            if (e.target.contains("white")) {
-                e.target.remove("white");
-                e.target.add("blue");
+            if (e.target.classList.contains("white") && currentPlayer == "blue") {
+                e.target.classList.remove("white");
+                e.target.classList.add("blue");
+                e.target.classList.toggle("flag");
+                currentPlayer = "red"
+            }
+            else if (e.target.classList.contains("white") && currentPlayer == "red") {
+                e.target.classList.remove("white");
+                e.target.classList.add("red");
+                e.target.classList.toggle("flag");
+                currentPlayer = "blue"
+            }
+        }
+
+        function reset() {
+
+            for (let i = 0; i < slots.length; i++) {
+
+                if (slots[i].classList.contains("red")) {
+                    slots[i].classList.remove("red");
+                    slots[i].classList.add("white")
+                }
+                else if (slots[i].classList.contains("blue")) {
+                    slots[i].classList.remove("blue");
+                    slots[i].classList.add("white")
+                }
+            }
+
+            blue = 0;
+            red = 0;
+        }
+
+
+        function checkState(e) {
+
+            red = 0;
+            blue = 0;
+            for (let i = slots.length - 1; i > 0; i--) {
+
+                // if (slots[i].classList.contains("blue") && slots[i].classList.contains("flag")) {
+                //     //red = 0;
+                //     blue += 1;
+                //     console.log(blue)
+                //     slots[i].classList.toggle("flag")
+
+                //     if (blue == 4) {
+                //         alert("blue wins")
+                //         //reset();
+                //         break;
+                //     }
+                // }
+                // else if (slots[i].classList.contains("red") && slots[i].classList.contains("flag")) {
+                //     //blue = 0;
+                //     red++
+                //     console.log(red)
+                //     slots[i].classList.toggle("flag")
+
+                //     if (red == 4) {
+                //         alert("red wins")
+                //         //reset();
+                //         break;
+                //     }
+                // }
+
+
+                if(slots[i].classList.contains("white")){
+
+                    red = 0;
+                    blue = 0;
+                }
+                else if (slots[i].classList.contains("blue")) {
+                    red = 0;
+                    blue += 1;
+                    console.log(blue)
+                    //slots[i].classList.toggle("flag")
+
+                    if (blue == 4) {
+                        alert("blue wins")
+                        //reset();
+                        break;
+                    }
+                }
+                else if (slots[i].classList.contains("red")) {
+                    blue = 0;
+                    red++
+                    console.log(red)
+                    //slots[i].classList.toggle("flag")
+
+                    if (red == 4) {
+                        alert("red wins")
+                        //reset();
+                        break;
+                    }
+                }
+
+
             }
         }
 
