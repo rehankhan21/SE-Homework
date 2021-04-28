@@ -3,6 +3,14 @@
     padding: 0%;
 }
 
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    left: 500px;
+}
 
 .game-board {
 
@@ -11,7 +19,7 @@
 
     margin-left: 10%;
    
-    border: 1px dotted black;
+    border: 3px solid black;
     font-family: sans-serif;
     
     font-weight: bold;
@@ -26,7 +34,8 @@
 
 .game-board-slot {
 
-    border: 1px solid black;
+    border: 2px solid black;
+    border-radius: 200px;
 }
 
 .white {
