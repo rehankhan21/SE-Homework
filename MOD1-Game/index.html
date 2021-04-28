@@ -82,11 +82,16 @@
             }
         }
 
+        // ask for players names as inputs
         let playerName = window.prompt("Enter Player 1s name: ")
         player_1 = new Players("blue", playerName);
 
         playerName = window.prompt("Enter Player 2s name: ")
         player_2 = new Players("red", playerName);
+
+        // maps for vertical win state function
+        let blueMap = new Map();
+        let redMap = new Map();
 
         //let currentPlayer = "blue"
 
@@ -102,17 +107,18 @@
         let blue = 0;
         let red = 0;
 
+        // when the pages loads, gives each slot 3 click event listners
         for (let i = 0; i < slots.length; i++) {
 
             slots[i].addEventListener("click", color);
-            slots[i].addEventListener("click", checkState);
+            slots[i].addEventListener("click", checkStateHorizontal);
             slots[i].addEventListener("click", checkStateVertical);
 
         }
 
 
 
-
+        // changes the color of the slot according to the current playeer
         function color(e) {
 
             console.log(e.target.classList.contains("1"))
@@ -146,6 +152,7 @@
             }
         }
 
+        // Resets the board
         function reset() {
 
             for (let i = 0; i < slots.length; i++) {
@@ -173,17 +180,11 @@
 
         function checkStateVertical(e) {
 
-            let blueMap = new Map();
-            let redMap = new Map();
-
             for (let i = 1; i <= 7; i++) {
 
                 blueMap.set(i, 0);
                 redMap.set(i, 0);
             }
-
-            red = 0;
-            blue = 0;
 
             for (let i = 0; i < slots.length; i++) {
 
@@ -373,8 +374,8 @@
 
         }
 
-        function checkState(e) {
-            6
+        function checkStateHorizontal(e) {
+            //6
             red = 0;
             blue = 0;
             for (let i = slots.length - 1; i > 0; i--) {
