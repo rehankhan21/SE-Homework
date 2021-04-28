@@ -113,6 +113,7 @@
             slots[i].addEventListener("click", color);
             slots[i].addEventListener("click", checkStateHorizontal);
             slots[i].addEventListener("click", checkStateVertical);
+            slots[i].addEventListener("click", checkStateDraw);
 
         }
 
@@ -176,6 +177,20 @@
             }
             else
                 document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
+        }
+
+        function checkStateDraw(e) {
+
+            for (let i = 0; i < slots.length; i++) {
+
+                if(slots[i].classList.contains("white")) {
+                    return 0;
+                }
+            }
+
+            alert("Its a Draw");
+            reset();
+
         }
 
         function checkStateVertical(e) {
