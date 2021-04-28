@@ -92,7 +92,11 @@
 
 
         let currentPlayer = player_1;
-        document.getElementById("player").innerHTML = currentPlayer.name + "'s turn"
+        if (currentPlayer.name != null) {
+            document.getElementById("player").innerHTML = currentPlayer.name + "'s turn";
+        }
+        else
+            document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
 
         let slots = document.getElementsByClassName("game-board-slot");
         let blue = 0;
@@ -118,15 +122,27 @@
                 e.target.classList.remove("white");
                 e.target.classList.add("blue");
                 e.target.classList.toggle("flag");
+
                 currentPlayer = player_2;
-                document.getElementById("player").innerHTML = currentPlayer.name + "'s turn"
+
+                if (currentPlayer.name != null) {
+                    document.getElementById("player").innerHTML = currentPlayer.name + "'s turn";
+                }
+                else
+                    document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
             }
             else if (e.target.classList.contains("white") && currentPlayer == player_2) {
                 e.target.classList.remove("white");
                 e.target.classList.add("red");
                 e.target.classList.toggle("flag");
+
                 currentPlayer = player_1;
-                document.getElementById("player").innerHTML = currentPlayer.name + "'s turn"
+
+                if (currentPlayer.name != null) {
+                    document.getElementById("player").innerHTML = currentPlayer.name + "'s turn";
+                }
+                else
+                    document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
             }
         }
 
@@ -147,7 +163,12 @@
             blue = 0;
             red = 0;
             currentPlayer = player_1;
-            document.getElementById("player").innerHTML = currentPlayer.name + "'s turn";
+
+            if (currentPlayer.name != null) {
+                document.getElementById("player").innerHTML = currentPlayer.name + "'s turn";
+            }
+            else
+                document.getElementById("player").innerHTML = currentPlayer.color + "'s turn";
         }
 
         function checkStateVertical(e) {
