@@ -8,10 +8,10 @@ class Players {
 
 // ask for players names as inputs
 let playerName = window.prompt("Enter Player 1s name: ")
-let player_1 = new Players("blue", playerName);
+player_1 = new Players("blue", playerName);
 
 playerName = window.prompt("Enter Player 2s name: ")
-let player_2 = new Players("red", playerName);
+player_2 = new Players("red", playerName);
 
 // maps for vertical win state function
 let blueMap = new Map();
@@ -19,8 +19,6 @@ let redMap = new Map();
 
 let blueMapRow = new Map();
 let redMapRow = new Map();
-
-document.getElementById("button").addEventListener("click", reset)
 
 //let currentPlayer = "blue"
 
