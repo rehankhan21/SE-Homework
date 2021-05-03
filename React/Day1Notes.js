@@ -1,5 +1,5 @@
 /*
-    React
+    REACT DAY 1
 
     React - reacts to state changes. Considered a view library.
 
@@ -11,7 +11,8 @@
 
     Important Terms
     -Components
-    -Virtual DOM, is a tree of components, aka React DOM 
+    -Virtual DOM 
+        -is a tree of components, aka React DOM 
         like how the normal DOM is a tree of nodes
 
         -Virtual DOM is a light weight representation of the Real DOM,
@@ -26,6 +27,7 @@
 
     React Tips
 
+    
     INDEX.JS
     -When you export from a component, you need to import in your index.js
     -You need to import you React DOM, in you index.js
@@ -41,6 +43,7 @@
     a ReactDOM / Virtual DOM
 
     -import React first, then import react dom, then any css file then import your app
+
 
     APP.js
 
