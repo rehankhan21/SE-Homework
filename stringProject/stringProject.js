@@ -11,6 +11,10 @@ let userName = window.prompt("Register UserName");
 let password = window.prompt("Register Password");
 let encrpytedPass = "";
 
+let loginBtn = document.getElementsByClassName("see")[0];
+let encrptpass = document.getElementById("password");
+encrptpass.innerHTML = "encryped password on our end, not for login " + encrypt();
+
 let trimName = userName.trim().toLowerCase();
 let trimPassword = password.trim().toLowerCase();
 
@@ -42,8 +46,14 @@ console.log(encrpytedPass)
 
 function login() {
 
-    let userInput = window.prompt("Enter your username")
-    let passInput = window.prompt("Enter you password")
+    let userInput = window.prompt("Enter your username").toLowerCase()
+    let passInput = window.prompt("Enter you password").toLowerCase()
+
+    console.log(userInput)
+    console.log(passInput)
+
+    console.log(userName)
+    console.log(password)
 
     if (userInput == "" || passInput == "") {
         alert("No user found");
@@ -55,6 +65,8 @@ function login() {
         // add some buttons or more options after the user is logged in
         // maybe hide some of the current buttons and replace them
         // with new onws
+
+        loginBtn.classList.add("hide");
 
         /*  
            if  prompt works in webpage
@@ -76,6 +88,8 @@ function login() {
                 go to checkout, output you have been checked out!!!!
             }
         */
+
+
     }
     else if (trimName != userInput && trimPassword == passInput) {
         alert(userInput
