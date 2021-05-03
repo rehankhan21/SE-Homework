@@ -42,4 +42,11 @@
 
     -Is the root that imports / takes all your components, then Index.js imports app.js
     and renders it in the virutual DOM
+
+    JSX
+
+    - A combination of JS and HTML
+    - Javascript extenstion
+    - babel is a tool that converts this jsx code into javascript, that can be understood
+    by the browser, to render JSX
 */
