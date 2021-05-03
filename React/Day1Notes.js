@@ -34,4 +34,12 @@
         app.js
     )
     -Close react elements like you close HTML elements
+
+    -Index.js is getting the root element from Index.html, then turning it into
+    a ReactDOM / Virtual DOM
+
+    APP.js
+
+    -Is the root that imports / takes all your components, then Index.js imports app.js
+    and renders it in the virutual DOM
 */
