@@ -51,6 +51,10 @@ function login() {
 
     if (trimName == userInput && trimPassword == passInput) {
         alert("you are loggined in");
+        
+        // add some buttons or more options after the user is logged in
+        // maybe hide some of the current buttons and replace them
+        // with new onws
 
         /*  
            if  prompt works in webpage
