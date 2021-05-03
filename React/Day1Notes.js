@@ -52,6 +52,9 @@
 
     -Returns your app too the index.js, so that it can Render your app in the Real DOM
 
+    - Returns only 1 main element to the index.js, have to have only 1 root level, all
+    the components and other elements go inside the one root element
+
 
     JSX
 
