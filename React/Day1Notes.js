@@ -27,7 +27,7 @@
 
     React Tips
 
-    
+
     INDEX.JS
     -When you export from a component, you need to import in your index.js
     -You need to import you React DOM, in you index.js
@@ -60,4 +60,9 @@
     - babel is a tool that converts this jsx code into javascript, that can be understood
     by the browser, to render JSX
     - webpack is a tool, that builds ur app on the production server before launching 
+
+    React States
+
+    -States are similar to eventlisteners and eventHandlers
+    -When an event happens the state changes, and takes in the new object
 */
