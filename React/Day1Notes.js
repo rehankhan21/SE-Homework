@@ -34,14 +34,21 @@
         app.js
     )
     -Close react elements like you close HTML elements
+    -When giving class names, you have to write className="name"
+    -React.StrictMode is a debugging tool, app should be instead the StrictMode
 
     -Index.js is getting the root element from Index.html, then turning it into
     a ReactDOM / Virtual DOM
+
+    -import React first, then import react dom, then any css file then import your app
 
     APP.js
 
     -Is the root that imports / takes all your components, then Index.js imports app.js
     and renders it in the virutual DOM
+
+    -Returns your app too the index.js, so that it can Render your app in the Real DOM
+
 
     JSX
 
@@ -49,4 +56,5 @@
     - Javascript extenstion
     - babel is a tool that converts this jsx code into javascript, that can be understood
     by the browser, to render JSX
+    - webpack is a tool, that builds ur app on the production server before launching 
 */
