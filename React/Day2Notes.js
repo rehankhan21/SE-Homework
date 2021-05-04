@@ -37,5 +37,19 @@
     -State is a way of storing private data for that object. States are private data
     related to the component.
 
-    -For states we need constructors
+    -For states we need constructors, we use the super keyword to get state from 
+    component library. Assign state with Objects
+
+    constructor() {
+        super()
+        this.state = {
+            message : 'welcome'
+        }
+    }
+    
+    this.setState({
+        message : "hi"
+    })
+
+    onClick = {() => this.changeMessage()}
 */
