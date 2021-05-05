@@ -33,4 +33,16 @@
     setState is asynchronous !!!!
     with async methods we have 2 parameters, first has the data and the second is a callback function,
     just like eventlistners which has ("onclick", callback function)
+
+    <button onClick={() => this.function()}>
+
+    When using onClicks in JSX we need brackets {} instead of qoutes
+    and if we want the THIS keyword to hold its value, then we need to use 
+    and arrouw function inside the brackets pointing towards the function
+    we are trying to call.
+    And the function ends with its parenthesis.
+
+    If we just wrote this <button onClick={this.function()}>
+    The this will continously call this fucntion so take off the parenthesis
+    in this case to not call the function until we click the button.
 */
