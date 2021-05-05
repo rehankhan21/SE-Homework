@@ -26,5 +26,11 @@
             console.log(' call back value ' + this.state.count);
         })
 
+        //console.log(this.state.count)
+
     setState takes 2 arguments
+
+    setState is asynchronous !!!!
+    with async methods we have 2 parameters, first has the data and the second is a callback function,
+    just like eventlistners which has ("onclick", callback function)
 */
