@@ -3,7 +3,7 @@
 
     Using states in functional components,
 
-    Destructing Arrays
+   ** Destructing Arrays
     - extracting multiple properties from an array by taking the strcuture and
     deconstructing it down into its own parts. this is down by using assignment.
 
