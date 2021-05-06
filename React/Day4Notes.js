@@ -70,4 +70,13 @@
     var [first, , third, ...others] = planet;
 
     Others output = ["Mars","pluto", "saturn"]
+
+    If the (...) operator appears on the RIGHT HAND SIDE rhs then is its a
+    SPREAD SYNTAX. It takes all the other elements in the array which have
+    no variable mapped to them and then maps it to the rest variable.
+
+    ex. var planets = ["Mercury", "Earth", "Venus", "Mars", "Pluto", "Saturn"];
+    var [first, , third, ...rest] = ["Mercury", "Earth", ...planets, "Saturn"];
+
+    Others output = ["Mars","pluto", "saturn"]
 */
