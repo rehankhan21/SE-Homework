@@ -23,4 +23,24 @@
 
     var [a, b, c] = thing
     // a = table, b = chair, c = fan
+
+    Declaration and assignment can be done separately in destructing
+    var first, second;
+    [first, second] = ["Male", "Female"]
+
+    If more variables in the array literal than there are elements in the array
+    to map to. Then those variables will return undefined.
+
+    ** You can Destructure arrays that are returned from a function.
+
+    ex. function runners() {
+        return ["sandra", "dennis", "chi"]
+    }
+
+    var [a,b,c] = runner();
+
+    You can manually assign values too your array literal variables
+    this is like a fallback to avoid undefined error
+    var a, b;
+    [a = 40, b = -4] = [1, 23]
 */
