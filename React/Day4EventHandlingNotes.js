@@ -21,4 +21,10 @@
     While the user is filing the form you want those changes to be stored locally
     that is an event, onChange event occurs which is handled by React locally
     so that the page doesnt have to reload.
+
+    Controlled Compnents
+
+    HTML elements such as input, textarea and select will maintain its own state
+    and update it based on the user input by using states and setState
+    React is the single source of truth.
 */
