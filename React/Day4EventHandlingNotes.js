@@ -1,4 +1,6 @@
 /*
+    Day 4 React
+
     Event Handling in React
 
     In react you pass event handlers as a call back function
