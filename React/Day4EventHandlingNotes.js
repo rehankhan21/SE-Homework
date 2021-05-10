@@ -15,4 +15,10 @@
     this.setState(state => ({
         isToggleOn: !state.isToggleOn
     }))
+
+    Forms in React
+
+    While the user is filing the form you want those changes to be stored locally
+    that is an event, onChange event occurs which is handled by React locally
+    so that the page doesnt have to reload.
 */
