@@ -27,4 +27,8 @@
     HTML elements such as input, textarea and select will maintain its own state
     and update it based on the user input by using states and setState
     React is the single source of truth.
+
+    These components are taking control over traversing the DOM api, the component 
+    does document.getElementById().value on its own and takes the value and stores 
+    it locally in react states. Does events such as OnChange and OnSubmit.
 */
