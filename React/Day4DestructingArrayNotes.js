@@ -61,7 +61,7 @@
     //b = roses;
 
     ** The Rest Parameter and Spread Syntax
-    The new (...) operator is a REST PARAMETER on the left hand side.
+    The new (...) operator is a REST PARAMETER on the left hand side.   
     A Rest parameter is used to map all the remaining elements in the array
     that have not been mapped to the rest variable itself. Rest variable must 
     always be last.
