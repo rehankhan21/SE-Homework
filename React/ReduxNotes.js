@@ -5,7 +5,7 @@
     Turns it into a global state, and becomes accesible to the entire app
 
     *Provider
-    wrap our entire app in a provider compoenent, pass the entire app as a child 
+    wrap our entire app in a provider component, pass the entire app as a child 
     componenet, then the provider can access any state in any component
 
     Store- Object that holds the entire state of our applicaton, global state
@@ -123,4 +123,9 @@
 
     npm install redux-devtools-extension
 
+    index.js
+
+    import { composeWithDevTools } from 'redux-devtools-extension'
+
+    const store = createStore(reducer, composeWithDevTools( ))
 */
