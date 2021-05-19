@@ -105,4 +105,22 @@
         payload: item.id
 
     })
- */
+
+    **How to use redux with functional compoenents
+
+    for functional components we use more Hooks,
+    import { useDispatch, useSelector } from 'react-redux'
+
+    const dispatch = useDispatch()
+
+    not a dispatch prop, instead dispatch is just in a variable
+
+    const groceries = useSelector(state => state.groceries)
+    //console.log(groceries)
+    this is like mapStateToProp
+
+    Redux Dev Tools
+
+    npm install redux-devtools-extension
+
+*/
