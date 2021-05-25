@@ -79,7 +79,7 @@
         }
     }
 
-    How to acess the store in class compoenents??
+    **How to acess the store in class compoenents??
 
     we need to import a connect fucntion at the top, this allows us to dispatch
     import { connect } from 'react-redux'
