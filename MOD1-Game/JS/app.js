@@ -14,8 +14,8 @@ playerName = window.prompt("Enter Player 2s name: ")
 let player_2 = new Players("red", playerName);
 
 // maps for vertical win state function
-let blueMap = new Map();
-let redMap = new Map();
+let blueMapCol = new Map();
+let redMapCol = new Map();
 
 let blueMapRow = new Map();
 let redMapRow = new Map();
@@ -126,32 +126,40 @@ function checkStateVertical(e) {
 
     for (let i = 1; i <= 7; i++) {
 
-        blueMap.set(i, 0);
-        redMap.set(i, 0);
+        blueMapRow.set(i, 0);
+        redMapRow.set(i, 0);
+
+        blueMapCol.set(i, 0);
+        redMapCol.set(i, 0);
     }
 
     for (let i = 0; i < slots.length; i++) {
 
-        if (slots[i].classList.contains("1")) {
+        if (slots[i].classList.contains("1") || slots[i].classList.contains("row1")) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(1, 0);
+                redMapCol.set(1, 0);
+                redMapRow.set(1, 0);
 
-                let val = blueMap.get(1);
+                let valRow = blueMapRow.get(1);
+                valRow += 1;
+                blueMapRow.set(1, valRow)
+
+                let val = blueMapCol.get(1);
                 val += 1;
-                blueMap.set(1, val);
+                blueMapCol.set(1, val);
 
-                if (val == 4) {
+                if (val == 4 || valRow == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(1, 0);
+                blueMapCol.set(1, 0);
 
-                let val = redMap.get(1);
+                let val = redMapCol.get(1);
                 val += 1;
-                redMap.set(1, val);
+                redMapCol.set(1, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -162,22 +170,22 @@ function checkStateVertical(e) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(2, 0);
+                redMapCol.set(2, 0);
 
-                let val = blueMap.get(2);
+                let val = blueMapCol.get(2);
                 val += 1;
-                blueMap.set(2, val);
+                blueMapCol.set(2, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(2, 0);
+                blueMapCol.set(2, 0);
 
-                let val = redMap.get(2);
+                let val = redMapCol.get(2);
                 val += 1;
-                redMap.set(2, val);
+                redMapCol.set(2, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -187,22 +195,22 @@ function checkStateVertical(e) {
         else if (slots[i].classList.contains("3")) {
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(3, 0);
+                redMapCol.set(3, 0);
 
-                let val = blueMap.get(3);
+                let val = blueMapCol.get(3);
                 val += 1;
-                blueMap.set(3, val);
+                blueMapCol.set(3, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(3, 0);
+                blueMapCol.set(3, 0);
 
-                let val = redMap.get(3);
+                let val = redMapCol.get(3);
                 val += 1;
-                redMap.set(3, val);
+                redMapCol.set(3, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -213,22 +221,22 @@ function checkStateVertical(e) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(4, 0);
+                redMapCol.set(4, 0);
 
-                let val = blueMap.get(4);
+                let val = blueMapCol.get(4);
                 val += 1;
-                blueMap.set(4, val);
+                blueMapCol.set(4, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(4, 0);
+                blueMapCol.set(4, 0);
 
-                let val = redMap.get(4);
+                let val = redMapCol.get(4);
                 val += 1;
-                redMap.set(4, val);
+                redMapCol.set(4, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -239,22 +247,22 @@ function checkStateVertical(e) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(5, 0);
+                redMapCol.set(5, 0);
 
-                let val = blueMap.get(5);
+                let val = blueMapCol.get(5);
                 val += 1;
-                blueMap.set(5, val);
+                blueMapCol.set(5, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(5, 0);
+                blueMapCol.set(5, 0);
 
-                let val = redMap.get(5)
+                let val = redMapCol.get(5)
                 val += 1;
-                redMap.set(5, val);
+                redMapCol.set(5, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -265,22 +273,22 @@ function checkStateVertical(e) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(6, 0);
+                redMapCol.set(6, 0);
 
-                let val = blueMap.get(6);
+                let val = blueMapCol.get(6);
                 val += 1;
-                blueMap.set(6, val);
+                blueMapCol.set(6, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(6, 0);
+                blueMapCol.set(6, 0);
 
-                let val = redMap.get(6);
+                let val = redMapCol.get(6);
                 val += 1;
-                redMap.set(6, val);
+                redMapCol.set(6, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -291,22 +299,22 @@ function checkStateVertical(e) {
 
 
             if (slots[i].classList.contains("blue")) {
-                redMap.set(7, 0);
+                redMapCol.set(7, 0);
 
-                let val = blueMap.get(7);
+                let val = blueMapCol.get(7);
                 val += 1;
-                blueMap.set(7, val);
+                blueMapCol.set(7, val);
 
                 if (val == 4) {
                     alert("blue wins")
                 }
             }
             else if (slots[i].classList.contains("red")) {
-                blueMap.set(7, 0);
+                blueMapCol.set(7, 0);
 
-                let val = redMap.get(7);
+                let val = redMapCol.get(7);
                 val += 1;
-                redMap.set(7, val);
+                redMapCol.set(7, val);
 
                 if (val == 4) {
                     alert("red wins")
@@ -367,174 +375,174 @@ function checkStateHorizontal(e) {
     //}
 
     // hori state but with maps
-    for (let i = 1; i <= 7; i++) {
+    // for (let i = 1; i <= 7; i++) {
 
-        blueMapRow.set(i, 0);
-        redMapRow.set(i, 0);
-    }
+    //     blueMapRow.set(i, 0);
+    //     redMapRow.set(i, 0);
+    // }
 
-    for (let i = 0; i < slots.length; i++) {
-
-
-
-        if (slots[i].classList.contains("row1")) {
+    // for (let i = 0; i < slots.length; i++) {
 
 
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(1, 0);
 
-                let val = blueMapRow.get(1);
-                val += 1;
-                blueMapRow.set(1, val);
-
-                if (val == 4) {
-                    alert("blue wins")
-                    break;
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(1, 0);
-
-                let val = redMapRow.get(1);
-                val += 1;
-                redMapRow.set(1, val);
-
-                if (val == 4) {
-                    alert("red wins")
-                    break;
-                }
-            }
-        }
-        else if (slots[i].classList.contains("row2")) {
+    //     if (slots[i].classList.contains("row1")) {
 
 
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(2, 0);
+    //         // if (slots[i].classList.contains("blue")) {
+    //         //     redMapRow.set(1, 0);
 
-                let val = blueMapRow.get(2);
-                val += 1;
-                blueMapRow.set(2, val);
+    //         //     let val = blueMapRow.get(1);
+    //         //     val += 1;
+    //         //     blueMapRow.set(1, val);
 
-                if (val == 4) {
-                    alert("blue wins")
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(2, 0);
+    //         //     if (val == 4) {
+    //         //         alert("blue wins")
+    //         //         break;
+    //         //     }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(1, 0);
 
-                let val = redMapRow.get(2);
-                val += 1;
-                redMapRow.set(2, val);
+    //             let val = redMapRow.get(1);
+    //             val += 1;
+    //             redMapRow.set(1, val);
 
-                if (val == 4) {
-                    alert("red wins")
-                }
-            }
-        }
-        else if (slots[i].classList.contains("row3")) {
-
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(3, 0);
-
-                let val = blueMapRow.get(3);
-                val += 1;
-                blueMapRow.set(3, val);
-
-                if (val == 4) {
-                    alert("blue wins")
-                    break;
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(3, 0);
-
-                let val = redMapRow.get(3);
-                val += 1;
-                redMapRow.set(3, val);
-
-                if (val == 4) {
-                    alert("red wins")
-                }
-            }
-        }
-        else if (slots[i].classList.contains("row4")) {
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //                 break;
+    //             }
+    //         }
+    //     }
+    //     else if (slots[i].classList.contains("row2")) {
 
 
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(4, 0);
+    //         if (slots[i].classList.contains("blue")) {
+    //             redMapRow.set(2, 0);
 
-                let val = blueMapRow.get(4);
-                val += 1;
-                blueMapRow.set(4, val);
+    //             let val = blueMapRow.get(2);
+    //             val += 1;
+    //             blueMapRow.set(2, val);
 
-                if (val == 4) {
-                    alert("blue wins")
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(4, 0);
+    //             if (val == 4) {
+    //                 alert("blue wins")
+    //             }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(2, 0);
 
-                let val = redMapRow.get(4);
-                val += 1;
-                redMapRow.set(4, val);
+    //             let val = redMapRow.get(2);
+    //             val += 1;
+    //             redMapRow.set(2, val);
 
-                if (val == 4) {
-                    alert("red wins")
-                }
-            }
-        }
-        else if (slots[i].classList.contains("row5")) {
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //             }
+    //         }
+    //     }
+    //     else if (slots[i].classList.contains("row3")) {
+
+    //         if (slots[i].classList.contains("blue")) {
+    //             redMapRow.set(3, 0);
+
+    //             let val = blueMapRow.get(3);
+    //             val += 1;
+    //             blueMapRow.set(3, val);
+
+    //             if (val == 4) {
+    //                 alert("blue wins")
+    //                 break;
+    //             }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(3, 0);
+
+    //             let val = redMapRow.get(3);
+    //             val += 1;
+    //             redMapRow.set(3, val);
+
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //             }
+    //         }
+    //     }
+    //     else if (slots[i].classList.contains("row4")) {
 
 
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(5, 0);
+    //         if (slots[i].classList.contains("blue")) {
+    //             redMapRow.set(4, 0);
 
-                let val = blueMapRow.get(5);
-                val += 1;
-                blueMapRow.set(5, val);
+    //             let val = blueMapRow.get(4);
+    //             val += 1;
+    //             blueMapRow.set(4, val);
 
-                if (val == 4) {
-                    alert("blue wins")
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(5, 0);
+    //             if (val == 4) {
+    //                 alert("blue wins")
+    //             }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(4, 0);
 
-                let val = redMapRow.get(5)
-                val += 1;
-                redMapRow.set(5, val);
+    //             let val = redMapRow.get(4);
+    //             val += 1;
+    //             redMapRow.set(4, val);
 
-                if (val == 4) {
-                    alert("red wins")
-                }
-            }
-        }
-        else if (slots[i].classList.contains("row6")) {
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //             }
+    //         }
+    //     }
+    //     else if (slots[i].classList.contains("row5")) {
 
 
-            if (slots[i].classList.contains("blue")) {
-                redMapRow.set(6, 0);
+    //         if (slots[i].classList.contains("blue")) {
+    //             redMapRow.set(5, 0);
 
-                let val = blueMapRow.get(6);
-                val += 1;
-                blueMapRow.set(6, val);
+    //             let val = blueMapRow.get(5);
+    //             val += 1;
+    //             blueMapRow.set(5, val);
 
-                if (val == 4) {
-                    alert("blue wins")
-                }
-            }
-            else if (slots[i].classList.contains("red")) {
-                blueMapRow.set(6, 0);
+    //             if (val == 4) {
+    //                 alert("blue wins")
+    //             }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(5, 0);
 
-                let val = redMapRow.get(6);
-                val += 1;
-                redMapRow.set(6, val);
+    //             let val = redMapRow.get(5)
+    //             val += 1;
+    //             redMapRow.set(5, val);
 
-                if (val == 4) {
-                    alert("red wins")
-                }
-            }
-        }
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //             }
+    //         }
+    //     }
+    //     else if (slots[i].classList.contains("row6")) {
 
-    }
+
+    //         if (slots[i].classList.contains("blue")) {
+    //             redMapRow.set(6, 0);
+
+    //             let val = blueMapRow.get(6);
+    //             val += 1;
+    //             blueMapRow.set(6, val);
+
+    //             if (val == 4) {
+    //                 alert("blue wins")
+    //             }
+    //         }
+    //         else if (slots[i].classList.contains("red")) {
+    //             blueMapRow.set(6, 0);
+
+    //             let val = redMapRow.get(6);
+    //             val += 1;
+    //             redMapRow.set(6, val);
+
+    //             if (val == 4) {
+    //                 alert("red wins")
+    //             }
+    //         }
+    //     }
+
+    // }
 }
