@@ -53,4 +53,10 @@
     Method Overloading - in same clas you can have the same method, but the
     definition should be different, ex. different parameters
     Method Overriding
+
+    tommorow
+    arrays,
+    annotations,
+    execption handling,
+    memory management
 */
