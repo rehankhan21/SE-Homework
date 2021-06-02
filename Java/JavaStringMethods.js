@@ -34,4 +34,23 @@
     so if we put index 17 it only goes up to 16th index
 
     qoute.substring(20); this starts from 20 goes to end of string
+
+    ** Methods in Java
+
+    static void myMethod(){
+     sys.out.println // ln means new line
+     vs
+     sys.out.print // all in one line
+    }
+
+    Acess Modifier when declaring a method.
+    static - is class level, 
+
+    public static void main(String[] args) {
+        myMethod();
+    }
+
+    Method Overloading - in same clas you can have the same method, but the
+    definition should be different, ex. different parameters
+    Method Overriding
 */
