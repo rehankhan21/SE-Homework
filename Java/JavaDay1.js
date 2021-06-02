@@ -34,4 +34,30 @@
     Array
 
     these objects have properties and methods attached to them
+
+    **Running Java Programs:
+
+    jre is java runtime enverioment, jdk is java dev kit
+
+    javac Hello.java creates the .class file exe
+    java Hello runs the class file
+
+    **eciplse:
+
+    too write a function we need to write a class file
+    we have to make a project first
+
+    create java project
+    JRE system libraray, kinda like node modules
+
+    make class files in src folder, we create a new package, that holds
+    our class files
+
+    new class files in package folder
+
+    class modifiers, public: any other class can access this classes
+    methods and properties, package: only classes in the same package 
+    can access its methods and properties
+
+    method stubs, boilerplate, click public static void boilerplate
 */

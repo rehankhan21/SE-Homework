@@ -1,0 +1,16 @@
+/*
+    string methods
+    charAt
+    concat
+    startswith
+    endswith
+    indexOf
+    lastIndexOf
+    length
+    replace
+    replaceAll
+    tolowercase
+    touppercase
+    trim
+    contains
+*/
