@@ -22,4 +22,7 @@
     Static variables always in static methods, Static variables refer to the 
     whole class and not a single class instance.
 
+    Setters and Getters
+
+    source which shortcut to generate setters and getters
 */
