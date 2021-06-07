@@ -19,4 +19,7 @@
     Static Vars are called class variables. Cannot be called with the 
     object reference object.
 
+    Static variables always in static methods, Static variables refer to the 
+    whole class and not a single class instance.
+
 */
