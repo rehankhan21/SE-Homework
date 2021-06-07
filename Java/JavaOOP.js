@@ -10,5 +10,13 @@
     Public Level - goes through the whole project, ex store
     Private Level - only in its own class file.
     Package Level - only in the package its in, ex.department
+    
+
+    Java Bean Class / Java Object Class
+    - One static var,
+    non static/instance var = static variable cannot be called as instance 
+    variables. Can be called with the object reference operator.
+    Static Vars are called class variables. Cannot be called with the 
+    object reference object.
 
 */
