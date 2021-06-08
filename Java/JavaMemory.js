@@ -34,4 +34,19 @@
     is defined. The interperter finds the method definition for the invocation.
 
     Once invocation is done the method gets popped out
+
+
+    **Storing Object datatype in memory
+
+    Person p1, Person is a type of object, declaring a reference varaible 
+    p1 of type object person
+
+    new Person() is when u instantiate a class and create a new object.
+
+    P1 being a reference variable will be stored in the stack, it will be stored
+    in the method it was created in. P1s value contains the memory address, of the 
+    new object we created(the reference to the object). The object is stored in the
+    heap somewhere.
+
+    The instantance varaibles are inside the object, which is in the heap.
 */
