@@ -49,4 +49,13 @@
     heap somewhere.
 
     The instantance varaibles are inside the object, which is in the heap.
+
+    when u make another p1, it will create a new object, this will switch
+    the value in p1 with the new memory address of the new object. and u lose
+    access to the old object, but it is still there.
+
+    ***Garbage Collection, it reads the memory and sees objects with no 
+    reference varaible. That object is garbage collected and removed 
+    from the memory automatically. Garbage collection only works in heap area
+    not stack.
 */
