@@ -58,4 +58,6 @@
     reference varaible. That object is garbage collected and removed 
     from the memory automatically. Garbage collection only works in heap area
     not stack.
+
+    This is all about getting more space for more varaibles in RAM.
 */
