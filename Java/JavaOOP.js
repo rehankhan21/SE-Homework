@@ -43,7 +43,7 @@
 
     Is a relationship? or Has a relationship?
 
-    Method Overloading adn Method Overriding
+    Method Overloading and Method Overriding
 
     Method overloading 
     - method with parameters and a method without parameters.
@@ -63,5 +63,5 @@
     - overriding happens during runtime. How does the complier know which 
     method too use? it depends on what object reference too use. Super for 
     parent method. Class reference for static, object reference for  non static
-    
+
 */
