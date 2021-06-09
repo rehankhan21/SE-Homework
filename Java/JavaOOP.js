@@ -30,6 +30,10 @@
 
     Setters and Getters
 
+    - instead of using constructors, we use setters and getters,
+..
+
+.
     source which shortcut to generate setters and getters
 
     **Inheretince
@@ -53,6 +57,7 @@
     signature/definition, that is called method overloading.
     - we can do method overloading for both non static and static methods.
     - Static you dont call with a reference variable only class 
+    - This happens during complie time.
 
     Method Overriding
     - Overriding happens only with inheritence.
@@ -63,5 +68,15 @@
     - overriding happens during runtime. How does the complier know which 
     method too use? it depends on what object reference too use. Super for 
     parent method. Class reference for static, object reference for  non static
+    - This happens during runtime, JRE(Java Runtime Enviroment)
+
+    Inheritance
+    Encapsulation
+    Interface
+    Object oriented programming
+
+    Student extends Person
+    Instance Variables: stud_id
+    subject 1 subject 2 subject 3 totalscore
 
 */
