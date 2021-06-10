@@ -55,4 +55,8 @@
     Polymorphism - when you access same method in different ways.
     ex. when multiple classes implement the same interface. they all acess
     the same method declaration but have different definitions.
+
+    HW 1 more method in the interface,
+
+    implemented by employee and student
 */
