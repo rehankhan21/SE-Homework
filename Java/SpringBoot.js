@@ -18,4 +18,13 @@
 
     Java has 3 built in annotations.
     Spring Boot is better than Spring
+
+    Spring tools ide
+
+    test folder, we have unit testing code.
+
+    Maven is a built tool, it help
+
+    pom.XML is the config file that spring boot creates for us, so that 
+    we dont have to do it with spring.
 */
