@@ -14,4 +14,15 @@
     All the methods and objects and feilds. Configuration setting in your xml file.
     easy to make changes in your XML file, since its not being complied. So your 
     class files wont break.
+
+    Inversion of Control
+
+    IoC - that creating object power is given to the spring framework. in the xml file, then 
+    you tell spring which 
+
+    Sigleton Design Pattern - only 1 object for that class, all other classes on use that
+    single object too. so u dont make same object multiple times. Then the other classes
+    can be connected to that single object in the XML file.
+
+    Prototype Design Pattern -
 */
