@@ -25,4 +25,6 @@
     can be connected to that single object in the XML file.
 
     Prototype Design Pattern -
+
+    Unit Testing - Each unit is tested seperately
 */
