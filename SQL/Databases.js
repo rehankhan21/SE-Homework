@@ -40,4 +40,6 @@
      SELECT * FROM items WHERE price > 100;
 
      SELECT COUNT(iid) from items WHERE price < 900;
+
+     DELETE from items where price = 300.50;
 */

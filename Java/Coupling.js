@@ -1,0 +1,5 @@
+/*
+    Tight coupling and Loose coupling.
+
+    
+*/
