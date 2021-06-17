@@ -27,4 +27,14 @@
 
     pom.XML is the config file that spring boot creates for us, so that 
     we dont have to do it with spring.
+
+    @Autowired -  has a relation
+
+    @scope(value="prototype"), by default bean classes are sigleton
+    pattern.
+
+    @Component turns a normal java class into a spring boot bean
+    class.
+
+    @Qualifier - 
 */
