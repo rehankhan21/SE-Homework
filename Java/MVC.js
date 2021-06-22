@@ -10,12 +10,14 @@
 
     Model - Data Layer
 
-   ** Spring boot created DispatcherServlet, takes the mapping in amore 
+   ** Spring boot created DispatcherServlet, takes the mapping in a more 
     effiecnt way, Adds an annotation to your controller called
     @Controller, this makes it easier to map each controller to
-    your servlets in the view.
+    your servlets in the view. 
 
     One Java file called service, creates the web.xml file that
     configs all the servlets with your controller classes for you.
     
+
+    Server layer in the controller, Requestmapping
 */
